@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using JOY_UI_LAYER.SysAdmin;
 
 namespace JOY_UI_LAYER
 {
@@ -15,7 +16,7 @@ namespace JOY_UI_LAYER
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new FrmLogin());
         }
     }
 }
