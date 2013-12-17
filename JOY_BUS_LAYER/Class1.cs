@@ -7,6 +7,6 @@ namespace JOY_BUS_LAYER
 {
     public class Class1
     {
-        public int testing;
+        public int testGit;
     }
 }
