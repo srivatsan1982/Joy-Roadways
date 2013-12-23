@@ -10,9 +10,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>JOY_UI_LAYER</RootNamespace>
     <AssemblyName>JOY_UI_LAYER</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -36,6 +37,13 @@
   <PropertyGroup>
     <StartupObject>JOY_UI_LAYER.Program</StartupObject>
   </PropertyGroup>
+  <PropertyGroup>
+    <Win32Resource>
+    </Win32Resource>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>1387772191_22999.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="ComponentFactory.Krypton.Toolkit, Version=4.4.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -49,8 +57,15 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\log4net.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management.Instrumentation" />
+    <Reference Include="System.Windows.Forms.Ribbon, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\System.Windows.Forms.Ribbon.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
@@ -60,7 +75,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\FrmMdiMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\FrmMdiMain.Designer.cs">
+      <DependentUpon>FrmMdiMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LstItemData.cs" />
+    <Compile Include="Common\FrmHlpGrd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\FrmHlpGrd.Designer.cs">
+      <DependentUpon>FrmHlpGrd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="ProgramModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SysAdmin\FrmLogin.cs">
       <SubType>Form</SubType>
@@ -68,6 +97,21 @@
     <Compile Include="SysAdmin\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="SysAdmin\FrmSCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SysAdmin\FrmSCompany.Designer.cs">
+      <DependentUpon>FrmSCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SysAdmin\FrmUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SysAdmin\FrmUser.Designer.cs">
+      <DependentUpon>FrmUser.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Common\FrmMdiMain.resx">
+      <DependentUpon>FrmMdiMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -91,6 +135,55 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="1387772191_22999.ico" />
+    <Content Include="Resources\1358719671_box_download_48.png" />
+    <Content Include="Resources\1358719710_materials.png" />
+    <Content Include="Resources\1358720041_49590.ico" />
+    <Content Include="Resources\1358720050_49590.ico" />
+    <Content Include="Resources\1358720153_15154.ico" />
+    <Content Include="Resources\1387772102_TruckYellow.png" />
+    <Content Include="Resources\1387772135_TruckYellow.png" />
+    <Content Include="Resources\1387772191_22999.ico" />
+    <Content Include="Resources\Actions-system-lock-screen-icon.png" />
+    <Content Include="Resources\apple_festival_app_store.png" />
+    <Content Include="Resources\bank-icon %281%29.png" />
+    <Content Include="Resources\bank-icon %282%29.png" />
+    <Content Include="Resources\Bank-icon.png" />
+    <Content Include="Resources\cash-register-icon.png" />
+    <Content Include="Resources\company-building-icon.png" />
+    <Content Include="Resources\Company-icon %281%29.png" />
+    <Content Include="Resources\Company-icon.png" />
+    <Content Include="Resources\credit-card-icon %281%29.png" />
+    <Content Include="Resources\credit-card-icon %282%29.png" />
+    <Content Include="Resources\credit-card-icon %283%29.png" />
+    <Content Include="Resources\credit-card-icon.png" />
+    <Content Include="Resources\data-transport-icon.png" />
+    <Content Include="Resources\database-development-icon.png" />
+    <Content Include="Resources\finance-icon.png" />
+    <Content Include="Resources\folder-customer-icon %281%29.png" />
+    <Content Include="Resources\folder-customer-icon.png" />
+    <Content Include="Resources\Groups-Meeting-Dark-icon.png" />
+    <Content Include="Resources\harddisk-icon.png" />
+    <Content Include="Resources\hitchhikeguidetogalaxy5_lock.png" />
+    <Content Include="Resources\inventory_icon.jpg" />
+    <Content Include="Resources\inventory_maintenance_64.png" />
+    <Content Include="Resources\invoice-icon.png" />
+    <Content Include="Resources\lorrygreen.png" />
+    <Content Include="Resources\mail-open-icon.png" />
+    <Content Include="Resources\Money-icon.png" />
+    <Content Include="Resources\Money-Transportation-icon.png" />
+    <Content Include="Resources\monitor-icon.png" />
+    <Content Include="Resources\note-icon.png" />
+    <Content Include="Resources\plus %282%29.png" />
+    <Content Include="Resources\plus.png" />
+    <Content Include="Resources\trash-box-icon.png" />
+    <Content Include="Resources\user-friend-icon.png" />
+    <Content Include="Resources\user-woman-icon.png" />
+    <Content Include="Resources\Users-icon %281%29.png" />
+    <Content Include="Resources\Users-icon.png" />
+    <Content Include="Resources\visa-1-icon.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\JOY_BUS_LAYER\JOY_BUS_LAYER.csproj">
