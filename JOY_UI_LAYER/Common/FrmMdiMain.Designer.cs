@@ -35,58 +35,55 @@ namespace JOY_UI_LAYER.Common
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMdiMain));
             this.kryptonPalette1 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.kryptonManager1 = new ComponentFactory.Krypton.Toolkit.KryptonManager(this.components);
-            this.ribbon1 = new System.Windows.Forms.Ribbon();
+            this.rbMainMenu = new System.Windows.Forms.Ribbon();
             this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel1 = new System.Windows.Forms.RibbonPanel();
-            this.ribbonButton1 = new System.Windows.Forms.RibbonButton();
+            this.rbtnCompanies = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel2 = new System.Windows.Forms.RibbonPanel();
-            this.ribbonButton2 = new System.Windows.Forms.RibbonButton();
+            this.rbtnCustomers = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel3 = new System.Windows.Forms.RibbonPanel();
-            this.ribbonButton3 = new System.Windows.Forms.RibbonButton();
+            this.rbtnVendors = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel4 = new System.Windows.Forms.RibbonPanel();
-            this.ribbonButton4 = new System.Windows.Forms.RibbonButton();
+            this.rbtnBanks = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel5 = new System.Windows.Forms.RibbonPanel();
-            this.ribbonButton5 = new System.Windows.Forms.RibbonButton();
+            this.rbtnMenus = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel6 = new System.Windows.Forms.RibbonPanel();
-            this.ribbonButton6 = new System.Windows.Forms.RibbonButton();
+            this.rbtnRoles = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel7 = new System.Windows.Forms.RibbonPanel();
-            this.ribbonButton7 = new System.Windows.Forms.RibbonButton();
+            this.rbtnUsers = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel8 = new System.Windows.Forms.RibbonPanel();
-            this.ribbonButton8 = new System.Windows.Forms.RibbonButton();
+            this.rbtnVouchers = new System.Windows.Forms.RibbonButton();
             this.SuspendLayout();
             // 
-            // kryptonManager1
+            // rbMainMenu
             // 
-            this.kryptonManager1.GlobalPaletteMode = ComponentFactory.Krypton.Toolkit.PaletteModeManager.Custom;
-            // 
-            // ribbon1
-            // 
-            this.ribbon1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ribbon1.Location = new System.Drawing.Point(0, 0);
-            this.ribbon1.Minimized = false;
-            this.ribbon1.Name = "ribbon1";
+            this.rbMainMenu.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.rbMainMenu.Location = new System.Drawing.Point(0, 0);
+            this.rbMainMenu.Minimized = false;
+            this.rbMainMenu.Name = "rbMainMenu";
             // 
             // 
             // 
-            this.ribbon1.OrbDropDown.BorderRoundness = 8;
-            this.ribbon1.OrbDropDown.Location = new System.Drawing.Point(0, 0);
-            this.ribbon1.OrbDropDown.Size = new System.Drawing.Size(527, 447);
-            this.ribbon1.OrbDropDown.TabIndex = 0;
-            this.ribbon1.OrbImage = null;
+            this.rbMainMenu.OrbDropDown.BorderRoundness = 8;
+            this.rbMainMenu.OrbDropDown.Location = new System.Drawing.Point(0, 0);
+            this.rbMainMenu.OrbDropDown.Name = "";
+            this.rbMainMenu.OrbDropDown.Size = new System.Drawing.Size(527, 447);
+            this.rbMainMenu.OrbDropDown.TabIndex = 0;
+            this.rbMainMenu.OrbImage = null;
             // 
             // 
             // 
-            this.ribbon1.QuickAcessToolbar.AltKey = null;
-            this.ribbon1.QuickAcessToolbar.Image = null;
-            this.ribbon1.QuickAcessToolbar.Tag = null;
-            this.ribbon1.QuickAcessToolbar.Text = null;
-            this.ribbon1.QuickAcessToolbar.ToolTip = null;
-            this.ribbon1.QuickAcessToolbar.ToolTipImage = null;
-            this.ribbon1.QuickAcessToolbar.ToolTipTitle = null;
-            this.ribbon1.Size = new System.Drawing.Size(1370, 138);
-            this.ribbon1.TabIndex = 1;
-            this.ribbon1.Tabs.Add(this.ribbonTab1);
-            this.ribbon1.TabSpacing = 6;
+            this.rbMainMenu.QuickAcessToolbar.AltKey = null;
+            this.rbMainMenu.QuickAcessToolbar.Image = null;
+            this.rbMainMenu.QuickAcessToolbar.Tag = null;
+            this.rbMainMenu.QuickAcessToolbar.Text = null;
+            this.rbMainMenu.QuickAcessToolbar.ToolTip = null;
+            this.rbMainMenu.QuickAcessToolbar.ToolTipImage = null;
+            this.rbMainMenu.QuickAcessToolbar.ToolTipTitle = null;
+            this.rbMainMenu.Size = new System.Drawing.Size(1370, 138);
+            this.rbMainMenu.TabIndex = 1;
+            this.rbMainMenu.Tabs.Add(this.ribbonTab1);
+            this.rbMainMenu.TabSpacing = 6;
             // 
             // ribbonTab1
             // 
@@ -103,163 +100,164 @@ namespace JOY_UI_LAYER.Common
             // 
             // ribbonPanel1
             // 
-            this.ribbonPanel1.Items.Add(this.ribbonButton1);
+            this.ribbonPanel1.Items.Add(this.rbtnCompanies);
             this.ribbonPanel1.Tag = null;
             this.ribbonPanel1.Text = "Manage Companies";
             // 
-            // ribbonButton1
+            // rbtnCompanies
             // 
-            this.ribbonButton1.AltKey = null;
-            this.ribbonButton1.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
-            this.ribbonButton1.DropDownArrowSize = new System.Drawing.Size(5, 3);
-            this.ribbonButton1.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton1.Image")));
-            this.ribbonButton1.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton1.SmallImage")));
-            this.ribbonButton1.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
-            this.ribbonButton1.Tag = null;
-            this.ribbonButton1.Text = "test";
-            this.ribbonButton1.ToolTip = null;
-            this.ribbonButton1.ToolTipImage = null;
-            this.ribbonButton1.ToolTipTitle = null;
+            this.rbtnCompanies.AltKey = null;
+            this.rbtnCompanies.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
+            this.rbtnCompanies.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.rbtnCompanies.Image = ((System.Drawing.Image)(resources.GetObject("rbtnCompanies.Image")));
+            this.rbtnCompanies.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnCompanies.SmallImage")));
+            this.rbtnCompanies.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
+            this.rbtnCompanies.Tag = null;
+            this.rbtnCompanies.Text = "test";
+            this.rbtnCompanies.ToolTip = null;
+            this.rbtnCompanies.ToolTipImage = null;
+            this.rbtnCompanies.ToolTipTitle = null;
+            this.rbtnCompanies.Click += new System.EventHandler(this.rbtnCompanies_Click);
             // 
             // ribbonPanel2
             // 
-            this.ribbonPanel2.Items.Add(this.ribbonButton2);
+            this.ribbonPanel2.Items.Add(this.rbtnCustomers);
             this.ribbonPanel2.Tag = null;
             this.ribbonPanel2.Text = "Manage Customers";
             // 
-            // ribbonButton2
+            // rbtnCustomers
             // 
-            this.ribbonButton2.AltKey = null;
-            this.ribbonButton2.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
-            this.ribbonButton2.DropDownArrowSize = new System.Drawing.Size(5, 3);
-            this.ribbonButton2.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton2.Image")));
-            this.ribbonButton2.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton2.SmallImage")));
-            this.ribbonButton2.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
-            this.ribbonButton2.Tag = null;
-            this.ribbonButton2.Text = null;
-            this.ribbonButton2.ToolTip = null;
-            this.ribbonButton2.ToolTipImage = null;
-            this.ribbonButton2.ToolTipTitle = null;
+            this.rbtnCustomers.AltKey = null;
+            this.rbtnCustomers.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
+            this.rbtnCustomers.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.rbtnCustomers.Image = ((System.Drawing.Image)(resources.GetObject("rbtnCustomers.Image")));
+            this.rbtnCustomers.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnCustomers.SmallImage")));
+            this.rbtnCustomers.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
+            this.rbtnCustomers.Tag = null;
+            this.rbtnCustomers.Text = null;
+            this.rbtnCustomers.ToolTip = null;
+            this.rbtnCustomers.ToolTipImage = null;
+            this.rbtnCustomers.ToolTipTitle = null;
             // 
             // ribbonPanel3
             // 
-            this.ribbonPanel3.Items.Add(this.ribbonButton3);
+            this.ribbonPanel3.Items.Add(this.rbtnVendors);
             this.ribbonPanel3.Tag = null;
             this.ribbonPanel3.Text = "Manage Vendors";
             // 
-            // ribbonButton3
+            // rbtnVendors
             // 
-            this.ribbonButton3.AltKey = null;
-            this.ribbonButton3.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
-            this.ribbonButton3.DropDownArrowSize = new System.Drawing.Size(5, 3);
-            this.ribbonButton3.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton3.Image")));
-            this.ribbonButton3.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton3.SmallImage")));
-            this.ribbonButton3.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
-            this.ribbonButton3.Tag = null;
-            this.ribbonButton3.Text = null;
-            this.ribbonButton3.ToolTip = null;
-            this.ribbonButton3.ToolTipImage = null;
-            this.ribbonButton3.ToolTipTitle = null;
+            this.rbtnVendors.AltKey = null;
+            this.rbtnVendors.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
+            this.rbtnVendors.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.rbtnVendors.Image = ((System.Drawing.Image)(resources.GetObject("rbtnVendors.Image")));
+            this.rbtnVendors.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnVendors.SmallImage")));
+            this.rbtnVendors.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
+            this.rbtnVendors.Tag = null;
+            this.rbtnVendors.Text = null;
+            this.rbtnVendors.ToolTip = null;
+            this.rbtnVendors.ToolTipImage = null;
+            this.rbtnVendors.ToolTipTitle = null;
             // 
             // ribbonPanel4
             // 
-            this.ribbonPanel4.Items.Add(this.ribbonButton4);
+            this.ribbonPanel4.Items.Add(this.rbtnBanks);
             this.ribbonPanel4.Tag = null;
             this.ribbonPanel4.Text = "Manage Banks";
             // 
-            // ribbonButton4
+            // rbtnBanks
             // 
-            this.ribbonButton4.AltKey = null;
-            this.ribbonButton4.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
-            this.ribbonButton4.DropDownArrowSize = new System.Drawing.Size(5, 3);
-            this.ribbonButton4.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton4.Image")));
-            this.ribbonButton4.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton4.SmallImage")));
-            this.ribbonButton4.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
-            this.ribbonButton4.Tag = null;
-            this.ribbonButton4.Text = null;
-            this.ribbonButton4.ToolTip = null;
-            this.ribbonButton4.ToolTipImage = null;
-            this.ribbonButton4.ToolTipTitle = null;
+            this.rbtnBanks.AltKey = null;
+            this.rbtnBanks.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
+            this.rbtnBanks.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.rbtnBanks.Image = ((System.Drawing.Image)(resources.GetObject("rbtnBanks.Image")));
+            this.rbtnBanks.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnBanks.SmallImage")));
+            this.rbtnBanks.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
+            this.rbtnBanks.Tag = null;
+            this.rbtnBanks.Text = null;
+            this.rbtnBanks.ToolTip = null;
+            this.rbtnBanks.ToolTipImage = null;
+            this.rbtnBanks.ToolTipTitle = null;
             // 
             // ribbonPanel5
             // 
-            this.ribbonPanel5.Items.Add(this.ribbonButton5);
+            this.ribbonPanel5.Items.Add(this.rbtnMenus);
             this.ribbonPanel5.Tag = null;
             this.ribbonPanel5.Text = "Manage Menus";
             // 
-            // ribbonButton5
+            // rbtnMenus
             // 
-            this.ribbonButton5.AltKey = null;
-            this.ribbonButton5.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
-            this.ribbonButton5.DropDownArrowSize = new System.Drawing.Size(5, 3);
-            this.ribbonButton5.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton5.Image")));
-            this.ribbonButton5.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton5.SmallImage")));
-            this.ribbonButton5.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
-            this.ribbonButton5.Tag = null;
-            this.ribbonButton5.Text = null;
-            this.ribbonButton5.ToolTip = null;
-            this.ribbonButton5.ToolTipImage = null;
-            this.ribbonButton5.ToolTipTitle = null;
+            this.rbtnMenus.AltKey = null;
+            this.rbtnMenus.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
+            this.rbtnMenus.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.rbtnMenus.Image = ((System.Drawing.Image)(resources.GetObject("rbtnMenus.Image")));
+            this.rbtnMenus.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnMenus.SmallImage")));
+            this.rbtnMenus.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
+            this.rbtnMenus.Tag = null;
+            this.rbtnMenus.Text = null;
+            this.rbtnMenus.ToolTip = null;
+            this.rbtnMenus.ToolTipImage = null;
+            this.rbtnMenus.ToolTipTitle = null;
             // 
             // ribbonPanel6
             // 
-            this.ribbonPanel6.Items.Add(this.ribbonButton6);
+            this.ribbonPanel6.Items.Add(this.rbtnRoles);
             this.ribbonPanel6.Tag = null;
             this.ribbonPanel6.Text = "Manage Roles";
             // 
-            // ribbonButton6
+            // rbtnRoles
             // 
-            this.ribbonButton6.AltKey = null;
-            this.ribbonButton6.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
-            this.ribbonButton6.DropDownArrowSize = new System.Drawing.Size(5, 3);
-            this.ribbonButton6.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton6.Image")));
-            this.ribbonButton6.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton6.SmallImage")));
-            this.ribbonButton6.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
-            this.ribbonButton6.Tag = null;
-            this.ribbonButton6.Text = null;
-            this.ribbonButton6.ToolTip = null;
-            this.ribbonButton6.ToolTipImage = null;
-            this.ribbonButton6.ToolTipTitle = null;
+            this.rbtnRoles.AltKey = null;
+            this.rbtnRoles.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
+            this.rbtnRoles.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.rbtnRoles.Image = ((System.Drawing.Image)(resources.GetObject("rbtnRoles.Image")));
+            this.rbtnRoles.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnRoles.SmallImage")));
+            this.rbtnRoles.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
+            this.rbtnRoles.Tag = null;
+            this.rbtnRoles.Text = null;
+            this.rbtnRoles.ToolTip = null;
+            this.rbtnRoles.ToolTipImage = null;
+            this.rbtnRoles.ToolTipTitle = null;
             // 
             // ribbonPanel7
             // 
-            this.ribbonPanel7.Items.Add(this.ribbonButton7);
+            this.ribbonPanel7.Items.Add(this.rbtnUsers);
             this.ribbonPanel7.Tag = null;
             this.ribbonPanel7.Text = "Manage Users";
             // 
-            // ribbonButton7
+            // rbtnUsers
             // 
-            this.ribbonButton7.AltKey = null;
-            this.ribbonButton7.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
-            this.ribbonButton7.DropDownArrowSize = new System.Drawing.Size(5, 3);
-            this.ribbonButton7.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton7.Image")));
-            this.ribbonButton7.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton7.SmallImage")));
-            this.ribbonButton7.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
-            this.ribbonButton7.Tag = null;
-            this.ribbonButton7.Text = null;
-            this.ribbonButton7.ToolTip = null;
-            this.ribbonButton7.ToolTipImage = null;
-            this.ribbonButton7.ToolTipTitle = null;
+            this.rbtnUsers.AltKey = null;
+            this.rbtnUsers.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
+            this.rbtnUsers.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.rbtnUsers.Image = ((System.Drawing.Image)(resources.GetObject("rbtnUsers.Image")));
+            this.rbtnUsers.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnUsers.SmallImage")));
+            this.rbtnUsers.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
+            this.rbtnUsers.Tag = null;
+            this.rbtnUsers.Text = null;
+            this.rbtnUsers.ToolTip = null;
+            this.rbtnUsers.ToolTipImage = null;
+            this.rbtnUsers.ToolTipTitle = null;
             // 
             // ribbonPanel8
             // 
-            this.ribbonPanel8.Items.Add(this.ribbonButton8);
+            this.ribbonPanel8.Items.Add(this.rbtnVouchers);
             this.ribbonPanel8.Tag = null;
             this.ribbonPanel8.Text = "Manage Vouchers";
             // 
-            // ribbonButton8
+            // rbtnVouchers
             // 
-            this.ribbonButton8.AltKey = null;
-            this.ribbonButton8.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
-            this.ribbonButton8.DropDownArrowSize = new System.Drawing.Size(5, 3);
-            this.ribbonButton8.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton8.Image")));
-            this.ribbonButton8.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton8.SmallImage")));
-            this.ribbonButton8.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
-            this.ribbonButton8.Tag = null;
-            this.ribbonButton8.Text = null;
-            this.ribbonButton8.ToolTip = null;
-            this.ribbonButton8.ToolTipImage = null;
-            this.ribbonButton8.ToolTipTitle = null;
+            this.rbtnVouchers.AltKey = null;
+            this.rbtnVouchers.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
+            this.rbtnVouchers.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.rbtnVouchers.Image = ((System.Drawing.Image)(resources.GetObject("rbtnVouchers.Image")));
+            this.rbtnVouchers.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnVouchers.SmallImage")));
+            this.rbtnVouchers.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
+            this.rbtnVouchers.Tag = null;
+            this.rbtnVouchers.Text = null;
+            this.rbtnVouchers.ToolTip = null;
+            this.rbtnVouchers.ToolTipImage = null;
+            this.rbtnVouchers.ToolTipTitle = null;
             // 
             // FrmMdiMain
             // 
@@ -267,7 +265,7 @@ namespace JOY_UI_LAYER.Common
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(1370, 750);
-            this.Controls.Add(this.ribbon1);
+            this.Controls.Add(this.rbMainMenu);
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IsMdiContainer = true;
@@ -283,23 +281,23 @@ namespace JOY_UI_LAYER.Common
 
         private ComponentFactory.Krypton.Toolkit.KryptonPalette kryptonPalette1;
         private ComponentFactory.Krypton.Toolkit.KryptonManager kryptonManager1;
-        private System.Windows.Forms.Ribbon ribbon1;
+        private System.Windows.Forms.Ribbon rbMainMenu;
         private System.Windows.Forms.RibbonTab ribbonTab1;
         private System.Windows.Forms.RibbonPanel ribbonPanel1;
-        private System.Windows.Forms.RibbonButton ribbonButton1;
+        private System.Windows.Forms.RibbonButton rbtnCompanies;
         private System.Windows.Forms.RibbonPanel ribbonPanel2;
-        private System.Windows.Forms.RibbonButton ribbonButton2;
+        private System.Windows.Forms.RibbonButton rbtnCustomers;
         private System.Windows.Forms.RibbonPanel ribbonPanel3;
-        private System.Windows.Forms.RibbonButton ribbonButton3;
+        private System.Windows.Forms.RibbonButton rbtnVendors;
         private System.Windows.Forms.RibbonPanel ribbonPanel4;
-        private System.Windows.Forms.RibbonButton ribbonButton4;
+        private System.Windows.Forms.RibbonButton rbtnBanks;
         private System.Windows.Forms.RibbonPanel ribbonPanel5;
         private System.Windows.Forms.RibbonPanel ribbonPanel6;
-        private System.Windows.Forms.RibbonButton ribbonButton5;
-        private System.Windows.Forms.RibbonButton ribbonButton6;
+        private System.Windows.Forms.RibbonButton rbtnMenus;
+        private System.Windows.Forms.RibbonButton rbtnRoles;
         private System.Windows.Forms.RibbonPanel ribbonPanel7;
-        private System.Windows.Forms.RibbonButton ribbonButton7;
+        private System.Windows.Forms.RibbonButton rbtnUsers;
         private System.Windows.Forms.RibbonPanel ribbonPanel8;
-        private System.Windows.Forms.RibbonButton ribbonButton8;
+        private System.Windows.Forms.RibbonButton rbtnVouchers;
     }
 }

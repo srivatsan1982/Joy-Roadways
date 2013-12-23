@@ -18,6 +18,11 @@ namespace JOY_UI_LAYER.Common
 
         private void FrmMdiMain_Load(object sender, EventArgs e)
         {
+            
+        }
+
+        private void rbtnCompanies_Click(object sender, EventArgs e)
+        {
 
         }
     }
