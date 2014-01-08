@@ -138,6 +138,7 @@ namespace JOY_UI_LAYER.Common
             this.rbtnCustomers.ToolTip = null;
             this.rbtnCustomers.ToolTipImage = null;
             this.rbtnCustomers.ToolTipTitle = null;
+            this.rbtnCustomers.Click += new System.EventHandler(this.rbtnCustomers_Click);
             // 
             // ribbonPanel3
             // 
@@ -158,6 +159,7 @@ namespace JOY_UI_LAYER.Common
             this.rbtnVendors.ToolTip = null;
             this.rbtnVendors.ToolTipImage = null;
             this.rbtnVendors.ToolTipTitle = null;
+            this.rbtnVendors.Click += new System.EventHandler(this.rbtnVendors_Click);
             // 
             // ribbonPanel4
             // 
@@ -178,6 +180,7 @@ namespace JOY_UI_LAYER.Common
             this.rbtnBanks.ToolTip = null;
             this.rbtnBanks.ToolTipImage = null;
             this.rbtnBanks.ToolTipTitle = null;
+            this.rbtnBanks.Click += new System.EventHandler(this.rbtnBanks_Click);
             // 
             // ribbonPanel5
             // 
@@ -198,6 +201,7 @@ namespace JOY_UI_LAYER.Common
             this.rbtnMenus.ToolTip = null;
             this.rbtnMenus.ToolTipImage = null;
             this.rbtnMenus.ToolTipTitle = null;
+            this.rbtnMenus.Click += new System.EventHandler(this.rbtnMenus_Click);
             // 
             // ribbonPanel6
             // 
@@ -218,6 +222,7 @@ namespace JOY_UI_LAYER.Common
             this.rbtnRoles.ToolTip = null;
             this.rbtnRoles.ToolTipImage = null;
             this.rbtnRoles.ToolTipTitle = null;
+            this.rbtnRoles.Click += new System.EventHandler(this.rbtnRoles_Click);
             // 
             // ribbonPanel7
             // 
@@ -238,6 +243,7 @@ namespace JOY_UI_LAYER.Common
             this.rbtnUsers.ToolTip = null;
             this.rbtnUsers.ToolTipImage = null;
             this.rbtnUsers.ToolTipTitle = null;
+            this.rbtnUsers.Click += new System.EventHandler(this.rbtnUsers_Click);
             // 
             // ribbonPanel8
             // 
@@ -258,6 +264,7 @@ namespace JOY_UI_LAYER.Common
             this.rbtnVouchers.ToolTip = null;
             this.rbtnVouchers.ToolTipImage = null;
             this.rbtnVouchers.ToolTipTitle = null;
+            this.rbtnVouchers.Click += new System.EventHandler(this.rbtnVouchers_Click);
             // 
             // FrmMdiMain
             // 

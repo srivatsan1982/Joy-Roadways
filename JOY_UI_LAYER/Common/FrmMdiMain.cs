@@ -25,5 +25,40 @@ namespace JOY_UI_LAYER.Common
         {
 
         }
+
+        private void rbtnCustomers_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rbtnVendors_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rbtnBanks_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rbtnMenus_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rbtnRoles_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rbtnUsers_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rbtnVouchers_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

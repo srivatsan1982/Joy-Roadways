@@ -1,6 +1,6 @@
 ﻿namespace JOY_UI_LAYER.SysAdmin
 {
-    partial class FrmSCompany
+    partial class FrmSCompany : ComponentFactory.Krypton.Toolkit.KryptonForm
     {
         /// <summary>
         /// Required designer variable.

@@ -74,6 +74,7 @@
             this.TxtPwd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxtPwd.Location = new System.Drawing.Point(254, 96);
             this.TxtPwd.Name = "TxtPwd";
+            this.TxtPwd.PasswordChar = '*';
             this.TxtPwd.Size = new System.Drawing.Size(260, 23);
             this.TxtPwd.TabIndex = 1;
             // 
