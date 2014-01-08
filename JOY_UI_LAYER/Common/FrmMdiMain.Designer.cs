@@ -57,7 +57,7 @@ namespace JOY_UI_LAYER.Common
             // 
             // rbMainMenu
             // 
-            this.rbMainMenu.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.rbMainMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.rbMainMenu.Location = new System.Drawing.Point(0, 0);
             this.rbMainMenu.Minimized = false;
             this.rbMainMenu.Name = "rbMainMenu";
@@ -80,7 +80,7 @@ namespace JOY_UI_LAYER.Common
             this.rbMainMenu.QuickAcessToolbar.ToolTip = null;
             this.rbMainMenu.QuickAcessToolbar.ToolTipImage = null;
             this.rbMainMenu.QuickAcessToolbar.ToolTipTitle = null;
-            this.rbMainMenu.Size = new System.Drawing.Size(1370, 138);
+            this.rbMainMenu.Size = new System.Drawing.Size(1284, 138);
             this.rbMainMenu.TabIndex = 1;
             this.rbMainMenu.Tabs.Add(this.ribbonTab1);
             this.rbMainMenu.TabSpacing = 6;
@@ -271,9 +271,9 @@ namespace JOY_UI_LAYER.Common
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(1370, 750);
+            this.ClientSize = new System.Drawing.Size(1284, 750);
             this.Controls.Add(this.rbMainMenu);
-            this.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IsMdiContainer = true;
             this.KeyPreview = true;

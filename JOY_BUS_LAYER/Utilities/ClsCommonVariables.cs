@@ -9,8 +9,8 @@ namespace JOY_BUS_LAYER.Utilities
 {
     public class ClsCommonVariables
     {
-        public Color INFOCUS = Color.Lavender;
-        public Color OUTFOCUS = Color.White;
+        public static Color INFOCUS = Color.Lavender;
+        public static Color OUTFOCUS = Color.White;
         public static log4net.ILog UIlogger;
         public DataTable DTUSERS;
         public DataTable DTLEDGERS;

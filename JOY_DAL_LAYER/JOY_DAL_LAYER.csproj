@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SysAdmin\ClsCompanyDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Common\ClsCommonDAFunctions.vb" />
@@ -53,6 +54,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JOY_BUS_LAYER\JOY_BUS_LAYER.csproj">
+      <Project>{37B9DE74-E63A-4CEE-BB1C-0FBC87170ABF}</Project>
+      <Name>JOY_BUS_LAYER</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

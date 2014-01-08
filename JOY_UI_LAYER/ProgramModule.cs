@@ -418,7 +418,7 @@ namespace JOY_UI_LAYER
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmLogin());
+            Application.Run(new FrmCompanyMaster());
         }
 
         /// <summary>
