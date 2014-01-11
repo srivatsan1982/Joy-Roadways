@@ -36,19 +36,6 @@ namespace JOY_CONTROL_LAYER.SysAdmin
 
         }
         /// <summary>
-        /// To Fetch a Company from the database.
-        /// </summary>
-        /// <param name="CompanyID Optional"></param>
-        /// <returns>Company Details</returns>
-        public List<ClsCompanyEntity> FunPubFetchCompany(int? CompanyID)
-        {
-            using (ClsCompanyDAL DAL = new ClsCompanyDAL())
-            {
-                return DAL.FunPubFetchCompany(CompanyID);
-            }
-
-        }
-        /// <summary>
         /// To Fetch all Companies from the database.
         /// </summary>
         /// <param name="Company"></param>

@@ -32,6 +32,12 @@ namespace JOY_UI_LAYER.SysAdmin
         {
             this.Wind = new System.Windows.Forms.Panel();
             this.WindGrp = new System.Windows.Forms.GroupBox();
+            this.TxtCmpCountry = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.ChkActive = new System.Windows.Forms.CheckBox();
+            this.CmdBrowseLogo = new System.Windows.Forms.Button();
+            this.TxtCmpLogoPath = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
             this.MskTxtCmpMobPhone = new System.Windows.Forms.MaskedTextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.CmdClear = new System.Windows.Forms.Button();
@@ -83,6 +89,8 @@ namespace JOY_UI_LAYER.SysAdmin
             this.LblCompanyName = new System.Windows.Forms.Label();
             this.FnCmpName = new System.Windows.Forms.FontDialog();
             this.FnCmpAdd1 = new System.Windows.Forms.FontDialog();
+            this.label24 = new System.Windows.Forms.Label();
+            this.TxtCmpIFSCCode = new System.Windows.Forms.TextBox();
             this.Wind.SuspendLayout();
             this.WindGrp.SuspendLayout();
             this.SuspendLayout();
@@ -92,12 +100,20 @@ namespace JOY_UI_LAYER.SysAdmin
             this.Wind.Controls.Add(this.WindGrp);
             this.Wind.Location = new System.Drawing.Point(71, 35);
             this.Wind.Name = "Wind";
-            this.Wind.Size = new System.Drawing.Size(525, 590);
+            this.Wind.Size = new System.Drawing.Size(525, 669);
             this.Wind.TabIndex = 0;
             this.Wind.Paint += new System.Windows.Forms.PaintEventHandler(this.Wind_Paint);
             // 
             // WindGrp
             // 
+            this.WindGrp.Controls.Add(this.TxtCmpIFSCCode);
+            this.WindGrp.Controls.Add(this.label24);
+            this.WindGrp.Controls.Add(this.TxtCmpCountry);
+            this.WindGrp.Controls.Add(this.label23);
+            this.WindGrp.Controls.Add(this.ChkActive);
+            this.WindGrp.Controls.Add(this.CmdBrowseLogo);
+            this.WindGrp.Controls.Add(this.TxtCmpLogoPath);
+            this.WindGrp.Controls.Add(this.label22);
             this.WindGrp.Controls.Add(this.MskTxtCmpMobPhone);
             this.WindGrp.Controls.Add(this.label21);
             this.WindGrp.Controls.Add(this.CmdClear);
@@ -149,27 +165,85 @@ namespace JOY_UI_LAYER.SysAdmin
             this.WindGrp.Controls.Add(this.LblCompanyName);
             this.WindGrp.Location = new System.Drawing.Point(8, 2);
             this.WindGrp.Name = "WindGrp";
-            this.WindGrp.Size = new System.Drawing.Size(510, 578);
+            this.WindGrp.Size = new System.Drawing.Size(510, 657);
             this.WindGrp.TabIndex = 0;
             this.WindGrp.TabStop = false;
             this.WindGrp.Text = "Company Details";
             this.WindGrp.Paint += new System.Windows.Forms.PaintEventHandler(this.WindGrp_Paint);
             // 
+            // TxtCmpCountry
+            // 
+            this.TxtCmpCountry.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtCmpCountry.Location = new System.Drawing.Point(153, 165);
+            this.TxtCmpCountry.Name = "TxtCmpCountry";
+            this.TxtCmpCountry.Size = new System.Drawing.Size(349, 21);
+            this.TxtCmpCountry.TabIndex = 8;
+            this.TxtCmpCountry.GotFocus += new System.EventHandler(this.TxtCmpCountry_GotFocus);
+            this.TxtCmpCountry.LostFocus += new System.EventHandler(this.TxtCmpCountry_LostFocus);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(9, 168);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(55, 15);
+            this.label23.TabIndex = 43;
+            this.label23.Text = "Country";
+            // 
+            // ChkActive
+            // 
+            this.ChkActive.AutoSize = true;
+            this.ChkActive.Location = new System.Drawing.Point(153, 592);
+            this.ChkActive.Name = "ChkActive";
+            this.ChkActive.Size = new System.Drawing.Size(63, 19);
+            this.ChkActive.TabIndex = 28;
+            this.ChkActive.Text = "Active";
+            this.ChkActive.UseVisualStyleBackColor = true;
+            // 
+            // CmdBrowseLogo
+            // 
+            this.CmdBrowseLogo.Location = new System.Drawing.Point(400, 561);
+            this.CmdBrowseLogo.Name = "CmdBrowseLogo";
+            this.CmdBrowseLogo.Size = new System.Drawing.Size(102, 23);
+            this.CmdBrowseLogo.TabIndex = 27;
+            this.CmdBrowseLogo.Text = "Browse Logo";
+            this.CmdBrowseLogo.UseVisualStyleBackColor = true;
+            // 
+            // TxtCmpLogoPath
+            // 
+            this.TxtCmpLogoPath.BackColor = System.Drawing.Color.White;
+            this.TxtCmpLogoPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtCmpLogoPath.Location = new System.Drawing.Point(153, 561);
+            this.TxtCmpLogoPath.Name = "TxtCmpLogoPath";
+            this.TxtCmpLogoPath.ReadOnly = true;
+            this.TxtCmpLogoPath.Size = new System.Drawing.Size(244, 21);
+            this.TxtCmpLogoPath.TabIndex = 25;
+            this.TxtCmpLogoPath.TabStop = false;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(9, 563);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(102, 15);
+            this.label22.TabIndex = 42;
+            this.label22.Text = "Company Logo";
+            // 
             // MskTxtCmpMobPhone
             // 
             this.MskTxtCmpMobPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MskTxtCmpMobPhone.Location = new System.Drawing.Point(153, 195);
+            this.MskTxtCmpMobPhone.Location = new System.Drawing.Point(153, 222);
             this.MskTxtCmpMobPhone.Mask = "0000000000";
             this.MskTxtCmpMobPhone.Name = "MskTxtCmpMobPhone";
             this.MskTxtCmpMobPhone.Size = new System.Drawing.Size(349, 21);
-            this.MskTxtCmpMobPhone.TabIndex = 9;
+            this.MskTxtCmpMobPhone.TabIndex = 10;
             this.MskTxtCmpMobPhone.GotFocus += new System.EventHandler(this.MskTxtCmpMobPhone_GotFocus);
             this.MskTxtCmpMobPhone.LostFocus += new System.EventHandler(this.MskTxtCmpMobPhone_LostFocus);
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(9, 198);
+            this.label21.Location = new System.Drawing.Point(9, 225);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(86, 15);
             this.label21.TabIndex = 41;
@@ -177,30 +251,30 @@ namespace JOY_UI_LAYER.SysAdmin
             // 
             // CmdClear
             // 
-            this.CmdClear.Location = new System.Drawing.Point(191, 533);
+            this.CmdClear.Location = new System.Drawing.Point(191, 616);
             this.CmdClear.Name = "CmdClear";
             this.CmdClear.Size = new System.Drawing.Size(129, 36);
-            this.CmdClear.TabIndex = 40;
+            this.CmdClear.TabIndex = 30;
             this.CmdClear.Text = "C&lear";
             this.CmdClear.UseVisualStyleBackColor = true;
             this.CmdClear.Click += new System.EventHandler(this.CmdClear_Click);
             // 
             // CmdCancel
             // 
-            this.CmdCancel.Location = new System.Drawing.Point(326, 533);
+            this.CmdCancel.Location = new System.Drawing.Point(326, 616);
             this.CmdCancel.Name = "CmdCancel";
             this.CmdCancel.Size = new System.Drawing.Size(129, 36);
-            this.CmdCancel.TabIndex = 40;
+            this.CmdCancel.TabIndex = 31;
             this.CmdCancel.Text = "&Cancel";
             this.CmdCancel.UseVisualStyleBackColor = true;
             this.CmdCancel.Click += new System.EventHandler(this.CmdCancel_Click);
             // 
             // CmdSave
             // 
-            this.CmdSave.Location = new System.Drawing.Point(56, 533);
+            this.CmdSave.Location = new System.Drawing.Point(56, 616);
             this.CmdSave.Name = "CmdSave";
             this.CmdSave.Size = new System.Drawing.Size(129, 36);
-            this.CmdSave.TabIndex = 39;
+            this.CmdSave.TabIndex = 29;
             this.CmdSave.Text = "&Save";
             this.CmdSave.UseVisualStyleBackColor = true;
             this.CmdSave.Click += new System.EventHandler(this.CmdSave_Click);
@@ -208,27 +282,27 @@ namespace JOY_UI_LAYER.SysAdmin
             // TxtCmpExchngRate
             // 
             this.TxtCmpExchngRate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TxtCmpExchngRate.Location = new System.Drawing.Point(376, 337);
+            this.TxtCmpExchngRate.Location = new System.Drawing.Point(376, 364);
             this.TxtCmpExchngRate.Name = "TxtCmpExchngRate";
             this.TxtCmpExchngRate.Size = new System.Drawing.Size(126, 21);
-            this.TxtCmpExchngRate.TabIndex = 17;
+            this.TxtCmpExchngRate.TabIndex = 18;
             this.TxtCmpExchngRate.GotFocus += new System.EventHandler(this.TxtCmpExchngRate_GotFocus);
             this.TxtCmpExchngRate.LostFocus += new System.EventHandler(this.TxtCmpExchngRate_LostFocus);
             // 
             // TxtCmpCurrSym
             // 
             this.TxtCmpCurrSym.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TxtCmpCurrSym.Location = new System.Drawing.Point(377, 308);
+            this.TxtCmpCurrSym.Location = new System.Drawing.Point(377, 335);
             this.TxtCmpCurrSym.Name = "TxtCmpCurrSym";
             this.TxtCmpCurrSym.Size = new System.Drawing.Size(125, 21);
-            this.TxtCmpCurrSym.TabIndex = 15;
+            this.TxtCmpCurrSym.TabIndex = 16;
             this.TxtCmpCurrSym.GotFocus += new System.EventHandler(this.TxtCmpCurrSym_GotFocus);
             this.TxtCmpCurrSym.LostFocus += new System.EventHandler(this.TxtCmpCurrSym_LostFocus);
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(309, 333);
+            this.label20.Location = new System.Drawing.Point(309, 360);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(74, 30);
             this.label20.TabIndex = 38;
@@ -237,7 +311,7 @@ namespace JOY_UI_LAYER.SysAdmin
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(310, 303);
+            this.label19.Location = new System.Drawing.Point(310, 330);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(67, 30);
             this.label19.TabIndex = 36;
@@ -246,17 +320,17 @@ namespace JOY_UI_LAYER.SysAdmin
             // TxtCmpPrfx
             // 
             this.TxtCmpPrfx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TxtCmpPrfx.Location = new System.Drawing.Point(379, 225);
+            this.TxtCmpPrfx.Location = new System.Drawing.Point(379, 252);
             this.TxtCmpPrfx.Name = "TxtCmpPrfx";
             this.TxtCmpPrfx.Size = new System.Drawing.Size(123, 21);
-            this.TxtCmpPrfx.TabIndex = 11;
+            this.TxtCmpPrfx.TabIndex = 12;
             this.TxtCmpPrfx.GotFocus += new System.EventHandler(this.TxtCmpPrfx_GotFocus);
             this.TxtCmpPrfx.LostFocus += new System.EventHandler(this.TxtCmpPrfx_LostFocus);
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(312, 220);
+            this.label18.Location = new System.Drawing.Point(312, 247);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(70, 30);
             this.label18.TabIndex = 35;
@@ -305,121 +379,121 @@ namespace JOY_UI_LAYER.SysAdmin
             // TxtCmpBankNm
             // 
             this.TxtCmpBankNm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TxtCmpBankNm.Location = new System.Drawing.Point(153, 476);
+            this.TxtCmpBankNm.Location = new System.Drawing.Point(153, 503);
             this.TxtCmpBankNm.Name = "TxtCmpBankNm";
             this.TxtCmpBankNm.Size = new System.Drawing.Size(349, 21);
-            this.TxtCmpBankNm.TabIndex = 22;
+            this.TxtCmpBankNm.TabIndex = 23;
             this.TxtCmpBankNm.GotFocus += new System.EventHandler(this.TxtCmpBankNm_GotFocus);
             this.TxtCmpBankNm.LostFocus += new System.EventHandler(this.TxtCmpBankNm_LostFocus);
             // 
             // TxtCmpBankBrnch
             // 
             this.TxtCmpBankBrnch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TxtCmpBankBrnch.Location = new System.Drawing.Point(153, 504);
+            this.TxtCmpBankBrnch.Location = new System.Drawing.Point(153, 531);
             this.TxtCmpBankBrnch.Name = "TxtCmpBankBrnch";
-            this.TxtCmpBankBrnch.Size = new System.Drawing.Size(349, 21);
-            this.TxtCmpBankBrnch.TabIndex = 23;
+            this.TxtCmpBankBrnch.Size = new System.Drawing.Size(155, 21);
+            this.TxtCmpBankBrnch.TabIndex = 24;
             this.TxtCmpBankBrnch.GotFocus += new System.EventHandler(this.TxtCmpBankBrnch_GotFocus);
             this.TxtCmpBankBrnch.LostFocus += new System.EventHandler(this.TxtCmpBankBrnch_LostFocus);
             // 
             // TxtCmpBankAccnt
             // 
             this.TxtCmpBankAccnt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TxtCmpBankAccnt.Location = new System.Drawing.Point(153, 448);
+            this.TxtCmpBankAccnt.Location = new System.Drawing.Point(153, 475);
             this.TxtCmpBankAccnt.Name = "TxtCmpBankAccnt";
             this.TxtCmpBankAccnt.Size = new System.Drawing.Size(349, 21);
-            this.TxtCmpBankAccnt.TabIndex = 21;
+            this.TxtCmpBankAccnt.TabIndex = 22;
             this.TxtCmpBankAccnt.GotFocus += new System.EventHandler(this.TxtCmpBankAccnt_GotFocus);
             this.TxtCmpBankAccnt.LostFocus += new System.EventHandler(this.TxtCmpBankAccnt_LostFocus);
             // 
             // TxtCmpPANNo
             // 
             this.TxtCmpPANNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TxtCmpPANNo.Location = new System.Drawing.Point(153, 420);
+            this.TxtCmpPANNo.Location = new System.Drawing.Point(153, 447);
             this.TxtCmpPANNo.Name = "TxtCmpPANNo";
             this.TxtCmpPANNo.Size = new System.Drawing.Size(349, 21);
-            this.TxtCmpPANNo.TabIndex = 20;
+            this.TxtCmpPANNo.TabIndex = 21;
             this.TxtCmpPANNo.GotFocus += new System.EventHandler(this.TxtCmpPANNo_GotFocus);
             this.TxtCmpPANNo.LostFocus += new System.EventHandler(this.TxtCmpPANNo_LostFocus);
             // 
             // TxtCmpTNGSTNo
             // 
             this.TxtCmpTNGSTNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TxtCmpTNGSTNo.Location = new System.Drawing.Point(153, 392);
+            this.TxtCmpTNGSTNo.Location = new System.Drawing.Point(153, 419);
             this.TxtCmpTNGSTNo.Name = "TxtCmpTNGSTNo";
             this.TxtCmpTNGSTNo.Size = new System.Drawing.Size(349, 21);
-            this.TxtCmpTNGSTNo.TabIndex = 19;
+            this.TxtCmpTNGSTNo.TabIndex = 20;
             this.TxtCmpTNGSTNo.GotFocus += new System.EventHandler(this.TxtCmpTNGSTNo_GotFocus);
             this.TxtCmpTNGSTNo.LostFocus += new System.EventHandler(this.TxtCmpTNGSTNo_LostFocus);
             // 
             // TxtCmpTINNo
             // 
             this.TxtCmpTINNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TxtCmpTINNo.Location = new System.Drawing.Point(153, 364);
+            this.TxtCmpTINNo.Location = new System.Drawing.Point(153, 391);
             this.TxtCmpTINNo.Name = "TxtCmpTINNo";
             this.TxtCmpTINNo.Size = new System.Drawing.Size(349, 21);
-            this.TxtCmpTINNo.TabIndex = 18;
+            this.TxtCmpTINNo.TabIndex = 19;
             this.TxtCmpTINNo.GotFocus += new System.EventHandler(this.TxtCmpTINNo_GotFocus);
             this.TxtCmpTINNo.LostFocus += new System.EventHandler(this.TxtCmpTINNo_LostFocus);
             // 
             // TxtCmpCurrPaise
             // 
             this.TxtCmpCurrPaise.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TxtCmpCurrPaise.Location = new System.Drawing.Point(153, 336);
+            this.TxtCmpCurrPaise.Location = new System.Drawing.Point(153, 363);
             this.TxtCmpCurrPaise.Name = "TxtCmpCurrPaise";
             this.TxtCmpCurrPaise.Size = new System.Drawing.Size(155, 21);
-            this.TxtCmpCurrPaise.TabIndex = 16;
+            this.TxtCmpCurrPaise.TabIndex = 17;
             this.TxtCmpCurrPaise.GotFocus += new System.EventHandler(this.TxtCmpCurrPaise_GotFocus);
             this.TxtCmpCurrPaise.LostFocus += new System.EventHandler(this.TxtCmpCurrPaise_LostFocus);
             // 
             // TxtCmpCurrCd
             // 
             this.TxtCmpCurrCd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TxtCmpCurrCd.Location = new System.Drawing.Point(153, 308);
+            this.TxtCmpCurrCd.Location = new System.Drawing.Point(153, 335);
             this.TxtCmpCurrCd.Name = "TxtCmpCurrCd";
             this.TxtCmpCurrCd.Size = new System.Drawing.Size(155, 21);
-            this.TxtCmpCurrCd.TabIndex = 14;
+            this.TxtCmpCurrCd.TabIndex = 15;
             this.TxtCmpCurrCd.GotFocus += new System.EventHandler(this.TxtCmpCurrCd_GotFocus);
             this.TxtCmpCurrCd.LostFocus += new System.EventHandler(this.TxtCmpCurrCd_LostFocus);
             // 
             // TxtCmpEmail
             // 
             this.TxtCmpEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TxtCmpEmail.Location = new System.Drawing.Point(153, 252);
+            this.TxtCmpEmail.Location = new System.Drawing.Point(153, 279);
             this.TxtCmpEmail.Name = "TxtCmpEmail";
             this.TxtCmpEmail.Size = new System.Drawing.Size(349, 21);
-            this.TxtCmpEmail.TabIndex = 12;
+            this.TxtCmpEmail.TabIndex = 13;
             this.TxtCmpEmail.GotFocus += new System.EventHandler(this.TxtCmpEmail_GotFocus);
             this.TxtCmpEmail.LostFocus += new System.EventHandler(this.TxtCmpEmail_LostFocus);
             // 
             // TxtCmpCurrName
             // 
             this.TxtCmpCurrName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TxtCmpCurrName.Location = new System.Drawing.Point(153, 280);
+            this.TxtCmpCurrName.Location = new System.Drawing.Point(153, 307);
             this.TxtCmpCurrName.Name = "TxtCmpCurrName";
             this.TxtCmpCurrName.Size = new System.Drawing.Size(349, 21);
-            this.TxtCmpCurrName.TabIndex = 13;
+            this.TxtCmpCurrName.TabIndex = 14;
             this.TxtCmpCurrName.GotFocus += new System.EventHandler(this.TxtCmpCurrName_GotFocus);
             this.TxtCmpCurrName.LostFocus += new System.EventHandler(this.TxtCmpCurrName_LostFocus);
             // 
             // MskTxtCmpPhone
             // 
             this.MskTxtCmpPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MskTxtCmpPhone.Location = new System.Drawing.Point(153, 165);
+            this.MskTxtCmpPhone.Location = new System.Drawing.Point(153, 192);
             this.MskTxtCmpPhone.Mask = "000000000000000000";
             this.MskTxtCmpPhone.Name = "MskTxtCmpPhone";
             this.MskTxtCmpPhone.Size = new System.Drawing.Size(349, 21);
-            this.MskTxtCmpPhone.TabIndex = 8;
+            this.MskTxtCmpPhone.TabIndex = 9;
             this.MskTxtCmpPhone.GotFocus += new System.EventHandler(this.MskTxtCmpPhone_GotFocus);
             this.MskTxtCmpPhone.LostFocus += new System.EventHandler(this.MskTxtCmpPhone_LostFocus);
             // 
             // TxtCmpFax
             // 
             this.TxtCmpFax.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TxtCmpFax.Location = new System.Drawing.Point(153, 224);
+            this.TxtCmpFax.Location = new System.Drawing.Point(153, 251);
             this.TxtCmpFax.Name = "TxtCmpFax";
             this.TxtCmpFax.Size = new System.Drawing.Size(155, 21);
-            this.TxtCmpFax.TabIndex = 10;
+            this.TxtCmpFax.TabIndex = 11;
             this.TxtCmpFax.GotFocus += new System.EventHandler(this.TxtCmpFax_GotFocus);
             this.TxtCmpFax.LostFocus += new System.EventHandler(this.TxtCmpFax_LostFocus);
             // 
@@ -476,7 +550,7 @@ namespace JOY_UI_LAYER.SysAdmin
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(9, 479);
+            this.label16.Location = new System.Drawing.Point(9, 506);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(131, 15);
             this.label16.TabIndex = 16;
@@ -485,7 +559,7 @@ namespace JOY_UI_LAYER.SysAdmin
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(9, 507);
+            this.label15.Location = new System.Drawing.Point(9, 534);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(138, 15);
             this.label15.TabIndex = 15;
@@ -494,7 +568,7 @@ namespace JOY_UI_LAYER.SysAdmin
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(9, 451);
+            this.label14.Location = new System.Drawing.Point(9, 478);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(143, 15);
             this.label14.TabIndex = 14;
@@ -503,7 +577,7 @@ namespace JOY_UI_LAYER.SysAdmin
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(9, 423);
+            this.label13.Location = new System.Drawing.Point(9, 450);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(56, 15);
             this.label13.TabIndex = 13;
@@ -512,7 +586,7 @@ namespace JOY_UI_LAYER.SysAdmin
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(9, 395);
+            this.label12.Location = new System.Drawing.Point(9, 422);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(74, 15);
             this.label12.TabIndex = 12;
@@ -521,7 +595,7 @@ namespace JOY_UI_LAYER.SysAdmin
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(9, 367);
+            this.label11.Location = new System.Drawing.Point(9, 394);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(51, 15);
             this.label11.TabIndex = 11;
@@ -530,7 +604,7 @@ namespace JOY_UI_LAYER.SysAdmin
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(9, 339);
+            this.label10.Location = new System.Drawing.Point(9, 366);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(103, 15);
             this.label10.TabIndex = 10;
@@ -539,7 +613,7 @@ namespace JOY_UI_LAYER.SysAdmin
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(9, 311);
+            this.label9.Location = new System.Drawing.Point(9, 338);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(100, 15);
             this.label9.TabIndex = 9;
@@ -548,7 +622,7 @@ namespace JOY_UI_LAYER.SysAdmin
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(9, 283);
+            this.label8.Location = new System.Drawing.Point(9, 310);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(105, 15);
             this.label8.TabIndex = 8;
@@ -557,7 +631,7 @@ namespace JOY_UI_LAYER.SysAdmin
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(9, 255);
+            this.label7.Location = new System.Drawing.Point(9, 282);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(44, 15);
             this.label7.TabIndex = 7;
@@ -566,7 +640,7 @@ namespace JOY_UI_LAYER.SysAdmin
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(9, 227);
+            this.label6.Location = new System.Drawing.Point(9, 254);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(30, 15);
             this.label6.TabIndex = 6;
@@ -575,7 +649,7 @@ namespace JOY_UI_LAYER.SysAdmin
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 168);
+            this.label5.Location = new System.Drawing.Point(9, 195);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(76, 15);
             this.label5.TabIndex = 5;
@@ -634,12 +708,29 @@ namespace JOY_UI_LAYER.SysAdmin
             // 
             this.FnCmpAdd1.Tag = "ADDRESS";
             // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(309, 534);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(74, 15);
+            this.label24.TabIndex = 1;
+            this.label24.Text = "IFSC Code";
+            // 
+            // TxtCmpIFSCCode
+            // 
+            this.TxtCmpIFSCCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtCmpIFSCCode.Location = new System.Drawing.Point(379, 532);
+            this.TxtCmpIFSCCode.Name = "TxtCmpIFSCCode";
+            this.TxtCmpIFSCCode.Size = new System.Drawing.Size(123, 21);
+            this.TxtCmpIFSCCode.TabIndex = 25;
+            // 
             // FrmCompanyMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(1264, 740);
+            this.ClientSize = new System.Drawing.Size(1252, 728);
             this.ControlBox = false;
             this.Controls.Add(this.Wind);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
@@ -718,6 +809,14 @@ namespace JOY_UI_LAYER.SysAdmin
         private System.Windows.Forms.Button CmdSave;
         private System.Windows.Forms.MaskedTextBox MskTxtCmpMobPhone;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.CheckBox ChkActive;
+        private System.Windows.Forms.Button CmdBrowseLogo;
+        private System.Windows.Forms.TextBox TxtCmpLogoPath;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox TxtCmpCountry;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox TxtCmpIFSCCode;
+        private System.Windows.Forms.Label label24;
 
     }
 }

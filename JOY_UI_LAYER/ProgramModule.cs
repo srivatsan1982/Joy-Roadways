@@ -213,7 +213,7 @@ namespace JOY_UI_LAYER
         public string EXQRY;
         public string HLPOledb;
         public float GRDHEIGHT;
-        public const string RPASS = "SKUMAR";
+        public const string RPASS = "MAHI";
         public string[] DATATYPES = new string[4];
         const int ERROR_SUCCESS = 0;
         // Unicode nul terminated string
@@ -825,7 +825,7 @@ namespace JOY_UI_LAYER
 
         public void CHKVALID(string S1, ref object S2)
         {
-            if (S1 == "SKUMAR")
+            if (S1 == "MAHI")
             {
                 NOTOK = false;
                 Fso = new System.Object();
@@ -1157,61 +1157,8 @@ namespace JOY_UI_LAYER
 
         //}
        
-        public string SETPASS(string PWD)
-        {
-            string functionReturnValue = null;
-
-            functionReturnValue = "";
-            if (NOTOK) { ACCESSDENIED(); return functionReturnValue; }
-            string SECPASS = null;
-            string SKEY = null;
-            int LSKEY = 0;
-            int N = 0;
-            int M = 0;
-            int K = 0;
-            SKEY = "SKUMAR";
-            LSKEY = SKEY.Length;
-            SECPASS = "";
-            N = 1;
-            K = PWD.Length;
-            for (M = 1; M <= K; M++)
-            {
-                SECPASS = SECPASS + Strings.Chr(Strings.Asc(Strings.Mid(PWD, M, 1)) + Strings.Asc(Strings.Mid(SKEY, N, 1)));
-                N = N + 1;
-                if (N > LSKEY)
-                    N = 1;
-            }
-            functionReturnValue = SECPASS;
-            return functionReturnValue;
-
-        }
-        public string GETPASS(string PWD)
-        {
-            string functionReturnValue = null;
-
-            functionReturnValue = "";
-            if (NOTOK) { ACCESSDENIED(); return functionReturnValue; }
-            string SECPASS = null;
-            string SKEY = null;
-            int LSKEY = 0;
-            int N = 0;
-            int M = 0;
-            int K = 0;
-            SKEY = "SKUMAR";
-            LSKEY = Strings.Len(SKEY);
-            SECPASS = "";
-            N = 1;
-            K = Strings.Len(PWD);
-            for (M = 1; M <= K; M++)
-            {
-                SECPASS = SECPASS + Strings.Chr(Strings.Asc(Strings.Mid(PWD, M, 1)) - Strings.Asc(Strings.Mid(SKEY, N, 1)));
-                N = N + 1;
-                if (N > LSKEY)
-                    N = 1;
-            }
-            functionReturnValue = SECPASS;
-            return functionReturnValue;
-        }
+  
+        
         public object SPLITSTR(object STRVAL, byte NOCHR)
         {
             string RESULT = null;
@@ -1333,7 +1280,7 @@ namespace JOY_UI_LAYER
             dynamic LL = null;
             dynamic ESTR = null;
             string FSTR = "0";
-            ESTR = "SKUMAR";
+            ESTR = "MAHI";
             LL = Strings.Len(ESTR);
             J = 1;
             for (I = 1; I <= Strings.Len(SCODE); I++)
@@ -1372,7 +1319,7 @@ namespace JOY_UI_LAYER
             dynamic LL = null;
             dynamic ESTR = null;
             string[] AA = null;
-            ESTR = "SKUMAR";
+            ESTR = "MAHI";
             LL = Strings.Len(ESTR);
             J = 1;
             for (I = 1; I <= Strings.Len(SCODE); I++)

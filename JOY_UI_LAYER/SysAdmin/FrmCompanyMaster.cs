@@ -4,13 +4,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using JOY_BUS_LAYER.Utilities;
 using ComponentFactory.Krypton.Toolkit;
-using Microsoft.VisualBasic;
 using System.Windows.Forms;
+using JOY_BUS_LAYER.SysAdmin;
+using JOY_BUS_LAYER.Utilities;
+using JOY_CONTROL_LAYER.SysAdmin;
 #endregion
 
 namespace JOY_UI_LAYER.SysAdmin
@@ -110,7 +110,46 @@ namespace JOY_UI_LAYER.SysAdmin
         }
         public void FunPubDisplay(int CmpID)
         {
+            using (ClsCompanyController objCompController = new ClsCompanyController())
+            {
+                using (ClsCompanyEntity objCompEntity = new ClsCompanyEntity())
+                {
+                    objCompEntity.COMPANYID = CmpID;
+                    DataTable DTCompany= objCompController.FunPubFetchCompany(objCompEntity);
+                    TxtCmpName.Text = DTCompany.Rows[0]["CMPNAME"].ToString();
+                    TxtCmpAliasName.Text = DTCompany.Rows[0]["CMPALIASNAME"].ToString();
+                    TxtCmpLogoPath.Text = DTCompany.Rows[0]["CMPLOGO"].ToString();
+                    TxtCmpAdd1.Text = DTCompany.Rows[0]["CMPADD1"].ToString();
+                    TxtCmpAdd2.Text = DTCompany.Rows[0]["CMPADD2"].ToString();
+                    TxtCmpCity.Text = DTCompany.Rows[0]["CMPCITY"].ToString();
+                    MskTxtCmpPinCd.Text = DTCompany.Rows[0]["CMPPINCODE"].ToString();
+                    TxtCmpCountry.Text = DTCompany.Rows[0]["CMPCOUNTRY"].ToString();
+                    TxtCmpEmail.Text = DTCompany.Rows[0]["CMPEMAIL"].ToString();
+                    MskTxtCmpPhone.Text = DTCompany.Rows[0]["CMPPHONE"].ToString();
+                    MskTxtCmpMobPhone.Text = DTCompany.Rows[0]["CMPMOBPHONE"].ToString();
+                    TxtCmpFax.Text = DTCompany.Rows[0]["CMPFAX"].ToString();
+                    TxtCmpTINNo.Text = DTCompany.Rows[0]["CMPTINNO"].ToString();
+                    TxtCmpTNGSTNo.Text = DTCompany.Rows[0]["CMPTNGSTNO"].ToString();
+                    TxtCmpPANNo.Text = DTCompany.Rows[0]["CMPPANNO"].ToString();
+                    TxtCmpBankNm.Text = DTCompany.Rows[0]["CMPBANKNAME"].ToString();
+                    TxtCmpBankBrnch.Text = DTCompany.Rows[0]["CMPBANKBRANCH"].ToString();
+                    TxtCmpBankAccnt.Text = DTCompany.Rows[0]["CMPBANKACCNO"].ToString();
+                    TxtCmpIFSCCode.Text = DTCompany.Rows[0]["CMPBANKIFSCODE"].ToString();
+                    //todo
+                    //FnCompany = new System.Drawing.Font(DTCompany.Rows[0]["CMPFNAME"].ToString(), Convert.ToDecimal(DTCompany.Rows[0]["CMPFSIZE"].ToString()), DTCompany.Rows[0]["CMPFSTYLE"].ToString());
+                    //TxtCmpName.Text = DTCompany.Rows[0]["CMPADD1FNAME"].ToString();
+                    //TxtCmpName.Text = DTCompany.Rows[0]["CMPADD1FSIZE"].ToString();
+                    //TxtCmpName.Text = DTCompany.Rows[0]["CMPADD1FSTYLE"].ToString();
 
+                    TxtCmpCurrName.Text = DTCompany.Rows[0]["CMPCURRNAME"].ToString();
+                    TxtCmpCurrCd.Text = DTCompany.Rows[0]["CMPCURRCODE"].ToString();
+                    TxtCmpCurrSym.Text = DTCompany.Rows[0]["CMPCURRSYM"].ToString();
+                    TxtCmpCurrPaise.Text = DTCompany.Rows[0]["CMPCURRPAISE"].ToString();
+                    TxtCmpExchngRate.Text = DTCompany.Rows[0]["CMPCURREXCHNG"].ToString();
+                    ChkActive.Checked =Convert.ToBoolean(DTCompany.Rows[0]["ACTIVE"].ToString());
+                    TxtCmpPrfx.Text = DTCompany.Rows[0]["CMPPRFX"].ToString();
+                }
+            }
         }
         public void FunPubSetFonts(FontDialog FnDlg)
         {
@@ -132,17 +171,11 @@ namespace JOY_UI_LAYER.SysAdmin
 
         private void Wind_Paint(object sender, PaintEventArgs e)
         {
-            using (ClsUtilities util = new ClsUtilities())
-            {
-                util.PaintControl(Wind);
-            }
+                ClsUtilities.PaintControl(Wind);
         }
         private void WindGrp_Paint(object sender, PaintEventArgs e)
         {
-            using (ClsUtilities util = new ClsUtilities())
-            {
-                util.PaintControl(Wind);
-            }
+                ClsUtilities.PaintControl(Wind);
         }
 
         #endregion
@@ -346,6 +379,15 @@ namespace JOY_UI_LAYER.SysAdmin
         {
             MskTxtCmpMobPhone.BackColor = ClsCommonVariables.OUTFOCUS;
         }
+        protected void TxtCmpCountry_GotFocus(object sender, EventArgs e)
+        {
+            TxtCmpCountry.SelectionLength = TxtCmpCountry.Text.Length;
+            TxtCmpCountry.BackColor = ClsCommonVariables.INFOCUS;
+        }
+        protected void TxtCmpCountry_LostFocus(object sender, EventArgs e)
+        {
+            TxtCmpCountry.BackColor = ClsCommonVariables.OUTFOCUS;
+        }
         #endregion
 
         #region[Form Events]
@@ -375,7 +417,6 @@ namespace JOY_UI_LAYER.SysAdmin
         }
 
         #endregion
-
 
     }
 }
