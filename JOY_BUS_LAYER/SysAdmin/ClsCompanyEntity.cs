@@ -45,7 +45,7 @@ namespace JOY_BUS_LAYER.SysAdmin
         public DateTime ADDEDDATE { get; set; }
         public int MODIFIERID{get;set;}
         public DateTime MODIFIEDDATE { get; set; }
-
+        public int ALLFIELDSTAT { get; set; }
         public void Dispose()
         {
 

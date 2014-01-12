@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SysAdmin\ClsBranchEntity.cs" />
     <Compile Include="SysAdmin\ClsCompanyEntity.cs" />
     <Compile Include="Common\PARAMETERS.cs" />
     <Compile Include="Common\PROCEDURES.cs" />

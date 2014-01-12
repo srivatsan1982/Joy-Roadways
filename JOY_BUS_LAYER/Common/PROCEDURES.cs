@@ -11,5 +11,9 @@ namespace JOY_BUS_LAYER.Common
         public const string PROC_ADD_EDIT_DELETE_COMPANYDETAILS = "SP_ADD_EDIT_DELETE_COMPANYDETAILS";
         public const string PROC_FETCH_COMPANYDETAILS = "SP_FETCH_COMPANYDETAILS";
         #endregion
+        #region [Branch Master]
+        public const string PROC_ADD_EDIT_DELETE_BRANCHDETAILS = "SP_ADD_EDIT_DELETE_BRANCHDETAILS";
+        public const string PROC_FETCH_BRANCHDETAILS = "SP_FETCH_BRANCHDETAILS";
+        #endregion
     }
 }

@@ -7,9 +7,19 @@ namespace JOY_BUS_LAYER.Common
 {
     public sealed class PARAMETERS
     {
-        #region [Company Master]
+        #region[Common Parameters]
         public const string P_MODE = "P_MODE|IN";
         public const string P_CMPID = "P_CMPID|IN";
+        public const string P_ACTIVE = "P_ACTIVE|IN";
+        public const string P_AID = "P_AID|IN";
+        public const string P_ADT = "P_ADT|IN";
+        public const string P_MID = "P_MID|IN";
+        public const string P_MDT = "P_MDT|IN";
+        public const string P_OUTPUT = "P_OUTPUT|OUT";
+        public const string P_ALLFLDSTAT = "P_ALLFLDSTAT|IN";
+        #endregion
+
+        #region [Company Master]
         public const string P_CMPNAME = "P_CMPNAME|IN";
         public const string P_CMPALIASNAME = "P_CMPALIASNAME|IN";
         public const string P_CMPLOGO = "P_CMPLOGO|IN";
@@ -40,13 +50,21 @@ namespace JOY_BUS_LAYER.Common
         public const string P_CMPCURRSYM = "P_CMPCURRSYM|IN";
         public const string P_CMPCURRPAISE = "P_CMPCURRPAISE|IN";
         public const string P_CMPCURREXCHNG = "P_CMPCURREXCHNG|IN";
-        public const string P_ACTIVE = "P_ACTIVE|IN";
-        public const string P_AID = "P_AID|IN";
-        public const string P_ADT = "P_ADT|IN";
-        public const string P_MID = "P_MID|IN";
-        public const string P_MDT = "P_MDT|IN";
-        public const string P_OUTPUT = "P_OUTPUT|OUT";
-        public const string P_ALLFLDSTAT = "P_ALLFLDSTAT|IN";
+        
+        #endregion
+
+        #region [Branch Master]
+        public const string P_BRANCHID = "P_BRANCHID|IN";
+        public const string P_BRANCHCODE = "P_BRANCHCODE|IN";
+        public const string P_BRANCHNAME = "P_BRANCHNAME|IN";
+        public const string P_BRANCHCONTACTNAME = "P_BRANCHCONTACTNAME|IN";
+        public const string P_BRANCHPHONE = "P_BRANCHPHONE|IN";
+        public const string P_BRANCHMOBILEPHONE = "P_BRANCHMOBILEPHONE|IN";
+        public const string P_BRANCHADD1 = "P_BRANCHADD1|IN";
+        public const string P_BRANCHADD2 = "P_BRANCHADD2|IN";
+        public const string P_BRANCHCITY = "P_BRANCHCITY|IN";
+        public const string P_BRANCHPINCODE = "P_BRANCHPINCODE|IN";
+        public const string P_BRANCHCOUNTRY = "P_BRANCHCOUNTRY|IN";
         #endregion
     }
 }

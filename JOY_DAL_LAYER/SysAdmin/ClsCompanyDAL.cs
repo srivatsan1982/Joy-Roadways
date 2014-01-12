@@ -20,6 +20,13 @@ namespace JOY_DAL_LAYER.SysAdmin
             DALModule.DALlogger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
             DALModule.PARAMS = new Dictionary<string, Object>();
         }
+
+        /// <summary>
+        /// Inserts the Company details onto the database
+        /// </summary>
+        /// <param name="Company"></param>
+        /// <param name="CompanyID"></param>
+        /// <returns></returns>
         public int FunPubCompanyTransaction(ClsCompanyEntity Company, out int CompanyID)
         {
             CompanyID = 0;
@@ -65,12 +72,17 @@ namespace JOY_DAL_LAYER.SysAdmin
             }
             catch (Exception ex)
             {
-                DALModule.DALlogger.Error("Error in ClsSysAdminDAL in FunPubInsertUserDetails", ex);
+                DALModule.DALlogger.Error("Error in ClsCompanyDAL in FunPubCompanyTransaction", ex);
             }
             return DALModule.EXECRESULT;
 
         }
 
+        /// <summary>
+        /// Fetches the Branch details from the database.
+        /// </summary>
+        /// <param name="Company"></param>
+        /// <returns></returns>
         public DataTable FunPubFetchCompany(ClsCompanyEntity Company)
         {
             try
@@ -80,11 +92,12 @@ namespace JOY_DAL_LAYER.SysAdmin
                 DALModule.PARAMS.Add(PARAMETERS.P_CMPNAME, Company.COMPANYNAME);
                 DALModule.PARAMS.Add(PARAMETERS.P_ADT, Company.ADDEDDATE);
                 DALModule.PARAMS.Add(PARAMETERS.P_MDT, Company.MODIFIEDDATE);
+                DALModule.PARAMS.Add(PARAMETERS.P_ALLFLDSTAT, Company.ALLFIELDSTAT);
                 DALModule.DTRESULT = DALModule.DPFactory.GetDataTable(PROCEDURES.PROC_FETCH_COMPANYDETAILS, DALModule.PARAMS);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                DALModule.DALlogger.Error("Error in ClsSysAdminDAL in FunPubFetchGroups", ex);
+                DALModule.DALlogger.Error("Error in ClsCompanyDAL in FunPubFetchCompany", ex);
             }
 
             return DALModule.DTRESULT;
