@@ -50,6 +50,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SysAdmin\ClsBranchDAL.cs" />
     <Compile Include="SysAdmin\ClsCompanyDAL.cs" />
+    <Compile Include="SysAdmin\ClsCustomerDAL.cs" />
+    <Compile Include="SysAdmin\ClsLorryDAL.cs" />
+    <Compile Include="SysAdmin\ClsVendorDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Common\ClsCommonDAFunctions.vb" />

@@ -103,11 +103,23 @@
     <Compile Include="SysAdmin\FrmCompanyMaster.Designer.cs">
       <DependentUpon>FrmCompanyMaster.cs</DependentUpon>
     </Compile>
+    <Compile Include="SysAdmin\FrmCustomerMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SysAdmin\FrmCustomerMaster.Designer.cs">
+      <DependentUpon>FrmCustomerMaster.cs</DependentUpon>
+    </Compile>
     <Compile Include="SysAdmin\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SysAdmin\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SysAdmin\FrmLorryMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SysAdmin\FrmLorryMaster.Designer.cs">
+      <DependentUpon>FrmLorryMaster.cs</DependentUpon>
     </Compile>
     <Compile Include="SysAdmin\FrmSCompany.cs">
       <SubType>Form</SubType>
@@ -120,6 +132,12 @@
     </Compile>
     <Compile Include="SysAdmin\FrmUser.Designer.cs">
       <DependentUpon>FrmUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SysAdmin\FrmVendorMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SysAdmin\FrmVendorMaster.Designer.cs">
+      <DependentUpon>FrmVendorMaster.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Common\FrmMdiMain.resx">
       <DependentUpon>FrmMdiMain.cs</DependentUpon>

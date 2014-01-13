@@ -66,5 +66,47 @@ namespace JOY_BUS_LAYER.Common
         public const string P_BRANCHPINCODE = "P_BRANCHPINCODE|IN";
         public const string P_BRANCHCOUNTRY = "P_BRANCHCOUNTRY|IN";
         #endregion
+
+        #region [Lorry Master]
+        public const string P_LRYID = "P_LRYID|IN";
+        public const string P_LRYNAME = "P_LRYNAME|IN";
+        public const string P_LRYOWNER = "P_LRYOWNER|IN";
+        public const string P_LRYNUMBER = "P_LRYNUMBER|IN";
+        public const string P_LRYDESC = "P_LRYDESC|IN";
+        #endregion
+
+        #region [Customer Master]
+        public const string P_CUSTID = "P_CUSTID|IN";
+        public const string P_CUSTCODE = "P_CUSTCODE|IN";
+        public const string P_CUSTFIRSTNAME = "P_CUSTFIRSTNAME|IN";
+        public const string P_CUSTLASTNAME = "P_CUSTLASTNAME|IN";
+        public const string P_CUSTADD1 = "P_CUSTADD1|IN";
+        public const string P_CUSTADD2 = "P_CUSTADD2|IN";
+        public const string P_CUSTCITY = "P_CUSTCITY|IN";
+        public const string P_CUSTPINCODE = "P_CUSTPINCODE|IN";
+        public const string P_CUSTCOUNTRY = "P_CUSTCOUNTRY|IN";
+        public const string P_CUSTEMAIL = "P_CUSTEMAIL|IN";
+        public const string P_CUSTPHONE = "P_CUSTPHONE|IN";
+        public const string P_CUSTMOBPHONE = "P_CUSTMOBPHONE|IN";
+        #endregion
+
+        #region [Vendor Master]
+        public const string P_VNDID = "P_VNDID|IN";
+        public const string P_VNDCODE = "P_VNDCODE|IN";
+        public const string P_VNDNAME = "P_VNDNAME|IN";
+        public const string P_VNDADD1 = "P_VNDADD1|IN";
+        public const string P_VNDADD2 = "P_VNDADD2|IN";
+        public const string P_VNDCITY = "P_VNDCITY|IN";
+        public const string P_VNDPINCODE = "P_VNDPINCODE|IN";
+        public const string P_VNDCOUNTRY = "P_VNDCOUNTRY|IN";
+        public const string P_VNDEMAIL = "P_VNDEMAIL|IN";
+        public const string P_VNDPHONE = "P_VNDPHONE|IN";
+        public const string P_VNDMOBPHONE = "P_VNDMOBPHONE|IN";
+        public const string P_VNDTINNO = "P_VNDTINNO|IN";
+        public const string P_VNDBANKNAME = "P_VNDBANKNAME|IN";
+        public const string P_VNDBANKBRANCH = "P_VNDBANKBRANCH|IN";
+        public const string P_VNDBANKACCNO = "P_VNDBANKACCNO|IN";
+        public const string P_VNDIFSCODE = "P_VNDIFSCODE|IN";
+        #endregion
     }
 }

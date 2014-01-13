@@ -45,8 +45,11 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SysAdmin\ClsBranchController.cs.cs" />
+    <Compile Include="SysAdmin\ClsBranchController.cs" />
     <Compile Include="SysAdmin\ClsCompanyController.cs" />
+    <Compile Include="SysAdmin\ClsCustomerController.cs" />
+    <Compile Include="SysAdmin\ClsLorryController.cs" />
+    <Compile Include="SysAdmin\ClsVendorController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
