@@ -152,11 +152,20 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SysAdmin\FrmBranchMaster.resx">
+      <DependentUpon>FrmBranchMaster.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SysAdmin\FrmCompanyMaster.resx">
       <DependentUpon>FrmCompanyMaster.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SysAdmin\FrmCustomerMaster.resx">
+      <DependentUpon>FrmCustomerMaster.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SysAdmin\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysAdmin\FrmLorryMaster.resx">
+      <DependentUpon>FrmLorryMaster.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="Properties\Settings.settings">
