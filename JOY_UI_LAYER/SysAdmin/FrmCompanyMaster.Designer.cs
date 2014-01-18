@@ -32,6 +32,8 @@ namespace JOY_UI_LAYER.SysAdmin
         {
             this.Wind = new System.Windows.Forms.Panel();
             this.WindGrp = new System.Windows.Forms.GroupBox();
+            this.TxtCmpIFSCCode = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
             this.TxtCmpCountry = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.ChkActive = new System.Windows.Forms.CheckBox();
@@ -89,8 +91,7 @@ namespace JOY_UI_LAYER.SysAdmin
             this.LblCompanyName = new System.Windows.Forms.Label();
             this.FnCmpName = new System.Windows.Forms.FontDialog();
             this.FnCmpAdd1 = new System.Windows.Forms.FontDialog();
-            this.label24 = new System.Windows.Forms.Label();
-            this.TxtCmpIFSCCode = new System.Windows.Forms.TextBox();
+            this.FldCompanyLogo = new System.Windows.Forms.OpenFileDialog();
             this.Wind.SuspendLayout();
             this.WindGrp.SuspendLayout();
             this.SuspendLayout();
@@ -169,7 +170,23 @@ namespace JOY_UI_LAYER.SysAdmin
             this.WindGrp.TabIndex = 0;
             this.WindGrp.TabStop = false;
             this.WindGrp.Text = "Company Details";
-            this.WindGrp.Paint += new System.Windows.Forms.PaintEventHandler(this.WindGrp_Paint);
+            // 
+            // TxtCmpIFSCCode
+            // 
+            this.TxtCmpIFSCCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtCmpIFSCCode.Location = new System.Drawing.Point(379, 532);
+            this.TxtCmpIFSCCode.Name = "TxtCmpIFSCCode";
+            this.TxtCmpIFSCCode.Size = new System.Drawing.Size(123, 21);
+            this.TxtCmpIFSCCode.TabIndex = 25;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(309, 534);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(74, 15);
+            this.label24.TabIndex = 1;
+            this.label24.Text = "IFSC Code";
             // 
             // TxtCmpCountry
             // 
@@ -208,6 +225,7 @@ namespace JOY_UI_LAYER.SysAdmin
             this.CmdBrowseLogo.TabIndex = 27;
             this.CmdBrowseLogo.Text = "Browse Logo";
             this.CmdBrowseLogo.UseVisualStyleBackColor = true;
+            this.CmdBrowseLogo.Click += new System.EventHandler(this.CmdBrowseLogo_Click);
             // 
             // TxtCmpLogoPath
             // 
@@ -708,29 +726,18 @@ namespace JOY_UI_LAYER.SysAdmin
             // 
             this.FnCmpAdd1.Tag = "ADDRESS";
             // 
-            // label24
+            // FldCompanyLogo
             // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(309, 534);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(74, 15);
-            this.label24.TabIndex = 1;
-            this.label24.Text = "IFSC Code";
-            // 
-            // TxtCmpIFSCCode
-            // 
-            this.TxtCmpIFSCCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TxtCmpIFSCCode.Location = new System.Drawing.Point(379, 532);
-            this.TxtCmpIFSCCode.Name = "TxtCmpIFSCCode";
-            this.TxtCmpIFSCCode.Size = new System.Drawing.Size(123, 21);
-            this.TxtCmpIFSCCode.TabIndex = 25;
+            this.FldCompanyLogo.DefaultExt = "*.jpg";
+            this.FldCompanyLogo.Filter = "Image Files|*.jpg|All Files|*.*";
+            this.FldCompanyLogo.Title = "Company Logo Finder";
             // 
             // FrmCompanyMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(1252, 728);
+            this.ClientSize = new System.Drawing.Size(1248, 724);
             this.ControlBox = false;
             this.Controls.Add(this.Wind);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
@@ -817,6 +824,7 @@ namespace JOY_UI_LAYER.SysAdmin
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TextBox TxtCmpIFSCCode;
         private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.OpenFileDialog FldCompanyLogo;
 
     }
 }

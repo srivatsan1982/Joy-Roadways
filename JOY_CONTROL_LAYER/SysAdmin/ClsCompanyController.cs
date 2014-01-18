@@ -27,11 +27,11 @@ namespace JOY_CONTROL_LAYER.SysAdmin
         /// </summary>
         /// <param name="Company"></param>
         /// <returns>Company Insertion Status</returns>
-        public int FunPubCompanyTransaction(ClsCompanyEntity Company,out int CompanyID)
+        public DataSet FunPubCompanyTransaction(ClsCompanyEntity Company)
         {
             using (ClsCompanyDAL DAL = new ClsCompanyDAL())
             {
-                return DAL.FunPubCompanyTransaction(Company, out CompanyID);
+                return DAL.FunPubCompanyTransaction(Company);
             }
 
         }

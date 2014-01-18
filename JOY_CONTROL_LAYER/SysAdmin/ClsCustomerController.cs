@@ -10,11 +10,11 @@ namespace JOY_CONTROL_LAYER.SysAdmin
 {
     public class ClsCustomerController:IDisposable
     {
-        public int FunPubCustomerTransaction(ClsCustomerEntity Customer, out int CustomerID)
+        public DataSet FunPubCustomerTransaction(ClsCustomerEntity Customer)
         {
             using (ClsCustomerDAL DAL = new ClsCustomerDAL())
             {
-                return DAL.FunPubCustomerTransaction(Customer, out CustomerID);
+                return DAL.FunPubCustomerTransaction(Customer);
             }
         }
         public DataTable FunPubFetchCustomerDetails(ClsCustomerEntity Customer)

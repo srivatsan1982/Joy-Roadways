@@ -16,11 +16,11 @@ namespace JOY_CONTROL_LAYER.SysAdmin
         /// <param name="Branch"></param>
         /// <param name="BranchID"></param>
         /// <returns></returns>
-        public int FunPubbranchTransaction(ClsBranchEntity Branch, out int BranchID)
+        public DataSet FunPubBranchTransaction(ClsBranchEntity Branch)
         {
             using (ClsBranchDAL DAL = new ClsBranchDAL())
             {
-                return DAL.FunPubBranchTransaction(Branch, out BranchID);
+                return DAL.FunPubBranchTransaction(Branch);
             }
 
         }

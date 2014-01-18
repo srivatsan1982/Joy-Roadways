@@ -10,11 +10,11 @@ namespace JOY_CONTROL_LAYER.SysAdmin
 {
     public class ClsVendorController:IDisposable
     {
-        public int FunPubVendorTransaction(ClsVendorEntity Vendor, out int VendorID)
+        public DataSet FunPubVendorTransaction(ClsVendorEntity Vendor)
         {
             using (ClsVendorDAL DAL = new ClsVendorDAL())
             {
-                return DAL.FunPubVendorTransaction(Vendor, out VendorID);
+                return DAL.FunPubVendorTransaction(Vendor);
             }
 
         }

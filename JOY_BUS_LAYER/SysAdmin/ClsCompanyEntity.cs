@@ -30,17 +30,17 @@ namespace JOY_BUS_LAYER.SysAdmin
         public string COMPANYBANKBRANCH { get; set; }
         public string COMPANYBANKIFSC { get; set; }
         public string CMPFONTNAME { get; set; }
-        public int CMPFONTSIZE { get; set; }
+        public float CMPFONTSIZE { get; set; }
         public string CMPFONTSTYLE { get; set; }
         public string CMPADD1FONTNAME { get; set; }
-        public int CMPADD1FONTSIZE { get; set; }
+        public float CMPADD1FONTSIZE { get; set; }
         public string CMPADD1FONTSTYLE { get; set; }
         public string COMPANYCURRNAME { get; set; }
         public string COMPANYCURRCODE { get; set; }
         public string COMPANYCURRSYM { get; set; }
         public string COMPANYCURRPAISE { get; set; }
         public decimal COMPANYCURREXCHGRATE { get; set; }
-        public int COMPANYACTIVE { get; set; }
+        public bool COMPANYACTIVE { get; set; }
         public int ADDERID{get;set;}
         public DateTime ADDEDDATE { get; set; }
         public int MODIFIERID{get;set;}

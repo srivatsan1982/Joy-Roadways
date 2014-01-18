@@ -38,7 +38,7 @@ namespace JOY_BUS_LAYER.Utilities
             int N = 0;
             int M = 0;
             int K = 0;
-            SKEY = "MAHI";
+            SKEY = "MAHIS";
             LSKEY = Strings.Len(SKEY);
             SECPASS = "";
             N = 1;
@@ -65,7 +65,7 @@ namespace JOY_BUS_LAYER.Utilities
             int N = 0;
             int M = 0;
             int K = 0;
-            SKEY = "MAHI";
+            SKEY = "MAHIS";
             LSKEY = SKEY.Length;
             SECPASS = "";
             N = 1;

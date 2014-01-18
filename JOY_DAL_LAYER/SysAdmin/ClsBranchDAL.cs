@@ -5,21 +5,30 @@ using System.Text;
 using JOY_BUS_LAYER.SysAdmin;
 using System.Data;
 using JOY_BUS_LAYER.Common;
+using JOY_BUS_LAYER.Utilities;
+using JOY_DAL_LAYER.DataAccessComponent;
 
 
 namespace JOY_DAL_LAYER.SysAdmin
 {
     public class ClsBranchDAL:IDisposable
     {
+        public ClsBranchDAL()
+        {
+            DALModule.ConnName = ClsUtilities.GETPASS(ClsUtilities.FunPubGetFileContents(Environment.CurrentDirectory + @"\PROC.RDN")).Split('|');
+            DALModule.Connection = DALModule.ConnName[0];
+            DALModule.DPFactory = new DataProvider(DALModule.Connection, DataProvider.DBType.MYSQL);
+            DALModule.DALlogger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+            DALModule.PARAMS = new Dictionary<string, Object>();
+        }
         /// <summary>
         /// Inserts the Branch details onto the database
         /// </summary>
         /// <param name="Branch"></param>
         /// <param name="BranchID"></param>
         /// <returns></returns>
-        public int FunPubBranchTransaction(ClsBranchEntity Branch, out int BranchID)
+        public DataSet FunPubBranchTransaction(ClsBranchEntity Branch)
         {
-            BranchID = 0;
             try
             {
                 DALModule.PARAMS.Add(PARAMETERS.P_MODE, Branch.MODE);
@@ -38,15 +47,13 @@ namespace JOY_DAL_LAYER.SysAdmin
                 DALModule.PARAMS.Add(PARAMETERS.P_ACTIVE, Branch.BRANCHACTIVE);
                 DALModule.PARAMS.Add(PARAMETERS.P_AID, Branch.ADDERID);
                 DALModule.PARAMS.Add(PARAMETERS.P_MID, Branch.MODIFIERID);
-                DALModule.PARAMS.Add(PARAMETERS.P_OUTPUT, null);
-                DALModule.EXECRESULT = DALModule.DPFactory.ExecuteNonQuery(PROCEDURES.PROC_ADD_EDIT_DELETE_BRANCHDETAILS, DALModule.PARAMS);
-                BranchID = Convert.ToInt32(DALModule.DPFactory.GetParameter(PARAMETERS.P_OUTPUT.Replace("|OUT", ""), "OUT", null).Value);
+                DALModule.DSRESULT = DALModule.DPFactory.FillDataset(DALModule.DPFactory.GetConnection(), PROCEDURES.PROC_ADD_EDIT_DELETE_BRANCHDETAILS, CommandType.StoredProcedure, DALModule.PARAMS);
             }
             catch (Exception ex)
             {
-                DALModule.DALlogger.Error("Error in ClsBranchDAL in FunPubbranchTransaction", ex);
+                DALModule.DALlogger.Error("Error in ClsBranchDAL in FunPubBranchTransaction", ex);
             }
-            return DALModule.EXECRESULT;
+            return DALModule.DSRESULT;
         }
         
         /// <summary>

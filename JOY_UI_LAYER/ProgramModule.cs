@@ -213,7 +213,7 @@ namespace JOY_UI_LAYER
         public string EXQRY;
         public string HLPOledb;
         public float GRDHEIGHT;
-        public const string RPASS = "MAHI";
+        public const string RPASS = "MAHIS";
         public string[] DATATYPES = new string[4];
         const int ERROR_SUCCESS = 0;
         // Unicode nul terminated string
@@ -418,7 +418,7 @@ namespace JOY_UI_LAYER
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmCompanyMaster());
+            Application.Run(new FrmVendorMaster());
         }
 
         /// <summary>
@@ -825,7 +825,7 @@ namespace JOY_UI_LAYER
 
         public void CHKVALID(string S1, ref object S2)
         {
-            if (S1 == "MAHI")
+            if (S1 == "MAHIS")
             {
                 NOTOK = false;
                 Fso = new System.Object();
@@ -1280,7 +1280,7 @@ namespace JOY_UI_LAYER
             dynamic LL = null;
             dynamic ESTR = null;
             string FSTR = "0";
-            ESTR = "MAHI";
+            ESTR = "MAHIS";
             LL = Strings.Len(ESTR);
             J = 1;
             for (I = 1; I <= Strings.Len(SCODE); I++)
@@ -1319,7 +1319,7 @@ namespace JOY_UI_LAYER
             dynamic LL = null;
             dynamic ESTR = null;
             string[] AA = null;
-            ESTR = "MAHI";
+            ESTR = "MAHIS";
             LL = Strings.Len(ESTR);
             J = 1;
             for (I = 1; I <= Strings.Len(SCODE); I++)

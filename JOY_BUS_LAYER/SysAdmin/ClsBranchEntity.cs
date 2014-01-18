@@ -20,7 +20,7 @@ namespace JOY_BUS_LAYER.SysAdmin
         public string BRANCHPINCODE { get; set; }
         public string BRANCHCOUNTRY { get; set; }
         public int COMPANYID { get; set; }
-        public int BRANCHACTIVE { get; set; }
+        public bool BRANCHACTIVE { get; set; }
         public int ADDERID { get; set; }
         public DateTime ADDEDDATE { get; set; }
         public int MODIFIERID { get; set; }

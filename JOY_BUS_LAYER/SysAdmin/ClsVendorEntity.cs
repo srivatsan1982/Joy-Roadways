@@ -25,7 +25,7 @@ namespace JOY_BUS_LAYER.SysAdmin
         public string VNDBANKACCNO { get; set; }
         public string VNDIFSCODE { get; set; }
         public int COMPANYID { get; set; }
-        public int VNDACTIVE { get; set; }
+        public bool VNDACTIVE { get; set; }
         public int ADDERID { get; set; }
         public DateTime ADDEDDATE { get; set; }
         public int MODIFIERID { get; set; }

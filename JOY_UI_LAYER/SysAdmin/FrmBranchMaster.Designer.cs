@@ -101,7 +101,6 @@ namespace JOY_UI_LAYER.SysAdmin
             this.WindGrp.TabIndex = 0;
             this.WindGrp.TabStop = false;
             this.WindGrp.Text = "Branch Details";
-            this.WindGrp.Paint += new System.Windows.Forms.PaintEventHandler(this.WindGrp_Paint);
             // 
             // TxtBrnchCtName
             // 
@@ -143,11 +142,10 @@ namespace JOY_UI_LAYER.SysAdmin
             // 
             // ChkActive
             // 
-            this.ChkActive.AutoSize = true;
             this.ChkActive.Location = new System.Drawing.Point(153, 283);
             this.ChkActive.Name = "ChkActive";
-            this.ChkActive.Size = new System.Drawing.Size(56, 17);
-            this.ChkActive.TabIndex = 28;
+            this.ChkActive.Size = new System.Drawing.Size(71, 18);
+            this.ChkActive.TabIndex = 10;
             this.ChkActive.Text = "Active";
             this.ChkActive.UseVisualStyleBackColor = true;
             // 
@@ -176,7 +174,7 @@ namespace JOY_UI_LAYER.SysAdmin
             this.CmdClear.Location = new System.Drawing.Point(191, 307);
             this.CmdClear.Name = "CmdClear";
             this.CmdClear.Size = new System.Drawing.Size(129, 36);
-            this.CmdClear.TabIndex = 30;
+            this.CmdClear.TabIndex = 12;
             this.CmdClear.Text = "C&lear";
             this.CmdClear.UseVisualStyleBackColor = true;
             this.CmdClear.Click += new System.EventHandler(this.CmdClear_Click);
@@ -186,7 +184,7 @@ namespace JOY_UI_LAYER.SysAdmin
             this.CmdCancel.Location = new System.Drawing.Point(326, 307);
             this.CmdCancel.Name = "CmdCancel";
             this.CmdCancel.Size = new System.Drawing.Size(129, 36);
-            this.CmdCancel.TabIndex = 31;
+            this.CmdCancel.TabIndex = 13;
             this.CmdCancel.Text = "&Cancel";
             this.CmdCancel.UseVisualStyleBackColor = true;
             this.CmdCancel.Click += new System.EventHandler(this.CmdCancel_Click);
@@ -196,7 +194,7 @@ namespace JOY_UI_LAYER.SysAdmin
             this.CmdSave.Location = new System.Drawing.Point(56, 307);
             this.CmdSave.Name = "CmdSave";
             this.CmdSave.Size = new System.Drawing.Size(129, 36);
-            this.CmdSave.TabIndex = 29;
+            this.CmdSave.TabIndex = 11;
             this.CmdSave.Text = "&Save";
             this.CmdSave.UseVisualStyleBackColor = true;
             this.CmdSave.Click += new System.EventHandler(this.CmdSave_Click);

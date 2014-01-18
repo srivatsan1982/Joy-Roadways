@@ -27,12 +27,12 @@ namespace JOY_DAL_LAYER.SysAdmin
         /// <param name="Company"></param>
         /// <param name="CompanyID"></param>
         /// <returns></returns>
-        public int FunPubCompanyTransaction(ClsCompanyEntity Company, out int CompanyID)
+        public DataSet FunPubCompanyTransaction(ClsCompanyEntity Company)
         {
-            CompanyID = 0;
             try
             {
                 DALModule.PARAMS.Add(PARAMETERS.P_MODE, Company.MODE);
+                DALModule.PARAMS.Add(PARAMETERS.P_CMPID, Company.COMPANYID);
                 DALModule.PARAMS.Add(PARAMETERS.P_CMPNAME, Company.COMPANYNAME);
                 DALModule.PARAMS.Add(PARAMETERS.P_CMPALIASNAME, Company.COMPANYALIAS);
                 DALModule.PARAMS.Add(PARAMETERS.P_CMPLOGO, Company.COMPANYLOGO);
@@ -66,15 +66,14 @@ namespace JOY_DAL_LAYER.SysAdmin
                 DALModule.PARAMS.Add(PARAMETERS.P_ACTIVE, Company.COMPANYACTIVE);
                 DALModule.PARAMS.Add(PARAMETERS.P_AID, Company.ADDERID);
                 DALModule.PARAMS.Add(PARAMETERS.P_MID, Company.MODIFIERID);
-                DALModule.PARAMS.Add(PARAMETERS.P_OUTPUT, null);
-                DALModule.EXECRESULT = DALModule.DPFactory.ExecuteNonQuery(PROCEDURES.PROC_ADD_EDIT_DELETE_COMPANYDETAILS, DALModule.PARAMS);
-                CompanyID = Convert.ToInt32(DALModule.DPFactory.GetParameter(PARAMETERS.P_OUTPUT.Replace("|OUT", ""), "OUT", null).Value);
+                DALModule.DSRESULT = DALModule.DPFactory.FillDataset(DALModule.DPFactory.GetConnection(),PROCEDURES.PROC_ADD_EDIT_DELETE_COMPANYDETAILS,CommandType.StoredProcedure, DALModule.PARAMS);
+                
             }
             catch (Exception ex)
             {
                 DALModule.DALlogger.Error("Error in ClsCompanyDAL in FunPubCompanyTransaction", ex);
             }
-            return DALModule.EXECRESULT;
+            return DALModule.DSRESULT;
 
         }
 

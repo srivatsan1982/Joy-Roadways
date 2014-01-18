@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using JOY_BUS_LAYER.SysAdmin;
 using JOY_BUS_LAYER.Utilities;
 using JOY_CONTROL_LAYER.SysAdmin;
+using System.Windows.Forms;
 #endregion
 
 namespace JOY_UI_LAYER.SysAdmin
@@ -42,7 +43,10 @@ namespace JOY_UI_LAYER.SysAdmin
 
         private void CmdSave_Click(object sender, EventArgs e)
         {
-
+            if (FunPubValidate()==true)
+            {
+                FunpubSaveCompany();    
+            }
         }
 
         private void CmdClear_Click(object sender, EventArgs e)
@@ -55,9 +59,148 @@ namespace JOY_UI_LAYER.SysAdmin
         {
             this.Close();
         }
+
+        private void CmdBrowseLogo_Click(object sender, EventArgs e)
+        {
+            if (FldCompanyLogo.ShowDialog()== DialogResult.OK)
+            {
+                TxtCmpLogoPath.Text = FldCompanyLogo.FileName;
+            }
+        }
         #endregion
 
         #region [Common Functions]
+
+        public bool FunPubValidate()
+        {
+            if (TxtCmpName.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Enter the Company Name", "Joy Roadways Logistics Solution", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                TxtCmpName.Focus();
+                return false;
+            }
+            if (TxtCmpAdd1.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Enter the Address1", "Joy Roadways Logistics Solution", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                TxtCmpAdd1.Focus();
+                return false;
+            }
+            if (TxtCmpCity.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Enter the City", "Joy Roadways Logistics Solution", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                TxtCmpCity.Focus();
+                return false;
+            }
+            if (MskTxtCmpPinCd.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Enter the PinCode", "Joy Roadways Logistics Solution", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MskTxtCmpPinCd.Focus();
+                return false;
+            }
+            if (TxtCmpCountry.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Enter the Country", "Joy Roadways Logistics Solution", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                TxtCmpCountry.Focus();
+                return false;
+            }
+            if (MskTxtCmpMobPhone.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Enter the Mobile Phone", "Joy Roadways Logistics Solution", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MskTxtCmpMobPhone.Focus();
+                return false;
+            }
+            if (TxtCmpPrfx.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Enter the Company Prefix", "Joy Roadways Logistics Solution", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                TxtCmpPrfx.Focus();
+                return false;
+            }
+            if (TxtCmpEmail.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Enter the Email Address", "Joy Roadways Logistics Solution", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                TxtCmpEmail.Focus();
+                return false;
+            }
+            if (TxtCmpCurrName.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Enter the Currency Name", "Joy Roadways Logistics Solution", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                TxtCmpCurrName.Focus();
+                return false;
+            }
+            if (TxtCmpCurrCd.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Enter the Currrency Code", "Joy Roadways Logistics Solution", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                TxtCmpCurrCd.Focus();
+                return false;
+            }
+            if (TxtCmpCurrSym.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Enter the Currency Symbol", "Joy Roadways Logistics Solution", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                TxtCmpCurrSym.Focus();
+                return false;
+            }
+            if (TxtCmpCurrPaise.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Enter the Currency paise", "Joy Roadways Logistics Solution", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                TxtCmpCurrPaise.Focus();
+                return false;
+            }
+            if (TxtCmpTINNo.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Enter the Company TIN No", "Joy Roadways Logistics Solution", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                TxtCmpTINNo.Focus();
+                return false;
+            }
+            if (TxtCmpTNGSTNo.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Enter the Company TNGST No", "Joy Roadways Logistics Solution", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                TxtCmpTNGSTNo.Focus();
+                return false;
+            }
+            if (TxtCmpBankAccnt.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Enter the Bank Account Number", "Joy Roadways Logistics Solution", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                TxtCmpBankAccnt.Focus();
+                return false;
+            }
+            if (TxtCmpBankNm.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Enter the Bank Name", "Joy Roadways Logistics Solution", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                TxtCmpBankNm.Focus();
+                return false;
+            }
+            if (TxtCmpBankBrnch.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Enter the Bank Branch", "Joy Roadways Logistics Solution", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                TxtCmpBankBrnch.Focus();
+                return false;
+            }
+            if (TxtCmpIFSCCode.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Enter the Bank IFSC Code", "Joy Roadways Logistics Solution", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                TxtCmpIFSCCode.Focus();
+                return false;
+            }
+            if (TxtCmpLogoPath.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Enter the path for the Company Logo", "Joy Roadways Logistics Solution", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                TxtCmpLogoPath.Focus();
+                return false;
+            }
+            if (FnCompany == null)
+            {
+                MessageBox.Show("Select the Font for Company", "Joy Roadways Logistics Solution", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CmdFntComp.Focus();
+                return false;
+            }
+            if (FnAddress == null)
+            {
+                MessageBox.Show("Select the Font for Address", "Joy Roadways Logistics Solution", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CmdFntAdd1.Focus();
+                return false;
+            }
+            return true;
+        }
         public void FunPubClearAll()
         {
             TxtCmpAdd1.Clear();
@@ -82,6 +225,9 @@ namespace JOY_UI_LAYER.SysAdmin
             TxtCmpPrfx.Clear();
             TxtCmpTINNo.Clear();
             TxtCmpTNGSTNo.Clear();
+            ChkActive.Checked = true;
+            FnAddress = null;
+            FnCompany = null;
         }
         public void FunPubEnableDisable(bool STAT)
         {
@@ -107,6 +253,70 @@ namespace JOY_UI_LAYER.SysAdmin
             TxtCmpPrfx.Enabled = STAT;
             TxtCmpTINNo.Enabled = STAT;
             TxtCmpTNGSTNo.Enabled = STAT;
+        }
+        public void FunpubSaveCompany()
+        {
+            int CompanyID=0;
+            using (ClsCompanyController objCompanyControl = new ClsCompanyController())
+            {
+                using (ClsCompanyEntity objcompanyEntity = new ClsCompanyEntity())
+                {
+                    objcompanyEntity.MODE = 1;
+                    objcompanyEntity.COMPANYNAME = TxtCmpName.Text.Trim();
+                    objcompanyEntity.COMPANYALIAS = TxtCmpAliasName.Text.Trim();
+                    objcompanyEntity.COMPANYADD1 = TxtCmpAdd1.Text.Trim();
+                    objcompanyEntity.COMPANYADD2 = TxtCmpAdd2.Text.Trim();
+                    objcompanyEntity.COMPANYBANKACCOUNT = TxtCmpBankAccnt.Text.Trim();
+                    objcompanyEntity.COMPANYBANKBRANCH = TxtCmpBankBrnch.Text.Trim();
+                    objcompanyEntity.COMPANYBANKIFSC = TxtCmpIFSCCode.Text.Trim();
+                    objcompanyEntity.COMPANYBANKNAME = TxtCmpBankNm.Text.Trim();
+                    objcompanyEntity.COMPANYCITY = TxtCmpCity.Text.Trim();
+                    objcompanyEntity.COMPANYCOUNTRY = TxtCmpCountry.Text.Trim();
+                    objcompanyEntity.COMPANYCURRCODE = TxtCmpCurrCd.Text.Trim();
+                    string Exchange = TxtCmpExchngRate.Text == "" ? "0" : TxtCmpExchngRate.Text;
+                    objcompanyEntity.COMPANYCURREXCHGRATE = Convert.ToDecimal(Exchange);
+                    objcompanyEntity.COMPANYCURRNAME = TxtCmpCurrCd.Text.Trim();
+                    objcompanyEntity.COMPANYCURRPAISE = TxtCmpCurrPaise.Text.Trim();
+                    objcompanyEntity.COMPANYCURRSYM = TxtCmpCurrSym.Text.Trim();
+                    objcompanyEntity.COMPANYEMAIL = TxtCmpEmail.Text.Trim();
+                    objcompanyEntity.COMPANYFAX = TxtCmpFax.Text.Trim();
+                    objcompanyEntity.COMPANYID = 0;
+                    objcompanyEntity.COMPANYLOGO = TxtCmpLogoPath.Text.Trim();
+                    objcompanyEntity.COMPANYMOBPHONE = MskTxtCmpMobPhone.Text.Trim();
+                    objcompanyEntity.COMPANYPANNO = TxtCmpPANNo.Text.Trim();
+                    objcompanyEntity.COMPANYPHONE = MskTxtCmpPhone.Text.Trim();
+                    objcompanyEntity.COMPANYPIN = MskTxtCmpPinCd.Text.Trim();
+                    objcompanyEntity.COMPANYPRFX = TxtCmpPrfx.Text.Trim();
+                    objcompanyEntity.COMPANYTINNO = TxtCmpTINNo.Text.Trim();
+                    objcompanyEntity.COMPANYTNGSTNO = TxtCmpTNGSTNo.Text.Trim();
+                    objcompanyEntity.CMPADD1FONTNAME = FnAddress.OriginalFontName;
+                    objcompanyEntity.CMPADD1FONTSIZE = FnAddress.Size;
+                    objcompanyEntity.CMPADD1FONTSTYLE = FnAddress.Style.ToString();
+                    objcompanyEntity.CMPFONTNAME = FnCompany.OriginalFontName;
+                    objcompanyEntity.CMPFONTSIZE = FnCompany.Size;
+                    objcompanyEntity.CMPFONTSTYLE = FnCompany.Style.ToString();
+                    objcompanyEntity.ADDERID = 1;
+                    objcompanyEntity.MODIFIERID = 1;
+                    objcompanyEntity.COMPANYACTIVE = Convert.ToBoolean(ChkActive.Checked);
+                    DataSet DSCompany= objCompanyControl.FunPubCompanyTransaction(objcompanyEntity);
+                    if ((DSCompany!=null)&&(DSCompany.Tables[0].Rows.Count>0))
+                    {
+                        CompanyID = Convert.ToInt32(DSCompany.Tables[0].Rows[0]["CMPID"].ToString());
+
+                        if (MessageBox.Show("The Company details have been inserted successfully. Would you like to add a new Company?", "Joy Roadways Logistics Solution", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                        {
+                            FunPubClearAll();
+                            TxtCmpName.Focus();
+                        }
+                        else
+                        {
+                            FunPubClearAll();
+                            TxtCmpName.Focus();
+                        }
+                    }
+                }
+                
+            }
         }
         public void FunPubDisplay(int CmpID)
         {
@@ -159,7 +369,7 @@ namespace JOY_UI_LAYER.SysAdmin
                     FnCompany = FnCmpName.ShowDialog() == DialogResult.OK ? new Font(FnCmpName.Font.FontFamily.Name, FnCmpName.Font.Size, FnCmpName.Font.Style) : null;
                     break;
                 case "ADDRESS":
-                    FnAddress = FnCmpName.ShowDialog() == DialogResult.OK ? new Font(FnCmpAdd1.Font.FontFamily.Name, FnCmpAdd1.Font.Size, FnCmpAdd1.Font.Style) : null;
+                    FnAddress = FnCmpAdd1.ShowDialog() == DialogResult.OK ? new Font(FnCmpAdd1.Font.FontFamily.Name, FnCmpAdd1.Font.Size, FnCmpAdd1.Font.Style) : null;
                     break;
                 default:
                     break;
@@ -173,11 +383,6 @@ namespace JOY_UI_LAYER.SysAdmin
         {
                 ClsUtilities.PaintControl(Wind);
         }
-        private void WindGrp_Paint(object sender, PaintEventArgs e)
-        {
-                ClsUtilities.PaintControl(Wind);
-        }
-
         #endregion
 
         #region [Textbox Events]
@@ -394,7 +599,9 @@ namespace JOY_UI_LAYER.SysAdmin
 
         private void FrmCompanyMaster_Load(object sender, EventArgs e)
         {
-
+            FunPubClearAll();
+            FunPubEnableDisable(true);
+            TxtCmpName.Focus();
         }
 
         private void FrmCompanyMaster_Activated(object sender, EventArgs e)
@@ -417,6 +624,5 @@ namespace JOY_UI_LAYER.SysAdmin
         }
 
         #endregion
-
     }
 }

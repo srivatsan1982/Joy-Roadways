@@ -167,6 +167,9 @@
     <EmbeddedResource Include="SysAdmin\FrmLorryMaster.resx">
       <DependentUpon>FrmLorryMaster.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SysAdmin\FrmVendorMaster.resx">
+      <DependentUpon>FrmVendorMaster.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="App.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -10,11 +10,11 @@ namespace JOY_CONTROL_LAYER.SysAdmin
 {
     public class ClsLorryController : IDisposable
     {
-        public int FunPubLorryTransaction(ClsLorryEntity Lorry, out int LorryID)
+        public DataSet FunPubLorryTransaction(ClsLorryEntity Lorry)
         {
             using (ClsLorryDAL DAL = new ClsLorryDAL())
             {
-                return DAL.FunPubLorryTransaction(Lorry, out LorryID);
+                return DAL.FunPubLorryTransaction(Lorry);
             }
         }
         public DataTable FunPubFetchLorryDetails(ClsLorryEntity Lorry)

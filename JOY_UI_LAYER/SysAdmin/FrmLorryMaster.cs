@@ -1,13 +1,18 @@
-﻿using System;
+﻿#region [Namespaces]
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
+using System.Windows.Forms;
+using JOY_BUS_LAYER.SysAdmin;
 using JOY_BUS_LAYER.Utilities;
+using JOY_CONTROL_LAYER.SysAdmin;
+using System.Windows.Forms;
+#endregion
 
 namespace JOY_UI_LAYER.SysAdmin
 {
@@ -21,7 +26,10 @@ namespace JOY_UI_LAYER.SysAdmin
         #region [Button Events]
         private void CmdSave_Click(object sender, EventArgs e)
         {
-
+            if (FunPubValidate())
+            {
+                FunPubSaveLorry();
+            }
         }
 
         private void CmdClear_Click(object sender, EventArgs e)
@@ -84,10 +92,6 @@ namespace JOY_UI_LAYER.SysAdmin
         {
             ClsUtilities.PaintControl(Wind);
         }
-        private void WindGrp_Paint(object sender, PaintEventArgs e)
-        {
-            ClsUtilities.PaintControl(Wind);
-        }
 
         #endregion
 
@@ -95,7 +99,8 @@ namespace JOY_UI_LAYER.SysAdmin
 
         private void FrmLorryMaster_Load(object sender, EventArgs e)
         {
-
+            FunPubClearAll();
+            TxtLryName.Focus();
         }
 
         private void FrmLorryMaster_Activated(object sender, EventArgs e)
@@ -115,6 +120,99 @@ namespace JOY_UI_LAYER.SysAdmin
         private void FrmLorryMaster_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.KeyChar = Char.ToUpper(e.KeyChar);
+        }
+
+        #endregion
+
+        #region [Common Functions]
+
+        public bool FunPubValidate()
+        {
+            if (TxtLryName.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Enter the Lorry Name", "Joy Roadways Logistics Solution", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                TxtLryName.Focus();
+                return false;
+            }
+            if (TxtLryNumber.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Enter the Lorry Number", "Joy Roadways Logistics Solution", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                TxtLryNumber.Focus();
+                return false;
+            }
+            if (TxtLryOwnrName.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Enter the Lorry Owner Name", "Joy Roadways Logistics Solution", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                TxtLryOwnrName.Focus();
+                return false;
+            }
+            if (TxtLryDesc.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Enter the Description", "Joy Roadways Logistics Solution", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                TxtLryDesc.Focus();
+                return false;
+            }
+            return true;
+        }
+
+        public void FunPubClearAll()
+        {
+            TxtLryName.Clear();
+            TxtLryNumber.Clear();
+            TxtLryOwnrName.Clear();
+            TxtLryDesc.Clear();
+            ChkActive.Checked = true;
+        }
+
+        public void FunPubEnableDisable(bool STAT)
+        {
+            TxtLryName.Enabled = STAT;
+            TxtLryNumber.Enabled = STAT;
+            TxtLryOwnrName.Enabled = STAT;
+            TxtLryDesc.Enabled = STAT;
+            ChkActive.Enabled = STAT;
+        }
+
+        public void FunPubSaveLorry()
+        {
+            int LorryID = 0;
+            using (ClsLorryController objLorryControl = new ClsLorryController())
+            {
+                using (ClsLorryEntity objLorryEntity = new ClsLorryEntity())
+                {
+                    objLorryEntity.MODE = 1;
+                    objLorryEntity.LRYNAME = TxtLryName.Text.Trim();
+                    objLorryEntity.LRYNUMBER = TxtLryNumber.Text.Trim();
+                    objLorryEntity.LRYOWNER = 1;//To do TxtLryOwnrName.Text.Trim();
+                    objLorryEntity.LRYDESC = TxtLryDesc.Text.Trim();
+                    objLorryEntity.ADDERID = 1;
+                    objLorryEntity.MODIFIERID = 1;
+                    objLorryEntity.LORRYACTIVE = Convert.ToBoolean(ChkActive.Checked);
+                    objLorryEntity.COMPANYID = 1;
+                    DataSet DSLorry = objLorryControl.FunPubLorryTransaction(objLorryEntity);
+                    if ((DSLorry != null) && (DSLorry.Tables[0].Rows.Count > 0))
+                    {
+                        LorryID = Convert.ToInt32(DSLorry.Tables[0].Rows[0]["LORRYID"].ToString());
+
+                        if (MessageBox.Show("The Lorry details have been inserted successfully. Would you like to add a new Lorry?", "Joy Roadways Logistics Solution", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                        {
+                            FunPubClearAll();
+                            TxtLryName.Focus();
+                        }
+                        else
+                        {
+                            FunPubClearAll();
+                            this.Close();
+                        }
+                    }
+                }
+
+            }
+        }
+
+        public void FunPubDisplay(int CmpID)
+        {
+
         }
 
         #endregion

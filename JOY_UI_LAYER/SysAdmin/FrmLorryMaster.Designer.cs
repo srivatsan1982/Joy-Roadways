@@ -77,7 +77,6 @@ namespace JOY_UI_LAYER.SysAdmin
             this.WindGrp.TabIndex = 0;
             this.WindGrp.TabStop = false;
             this.WindGrp.Text = "Lorry Details";
-            this.WindGrp.Paint += new System.Windows.Forms.PaintEventHandler(this.WindGrp_Paint);
             // 
             // TxtLryOwnrName
             // 
@@ -85,7 +84,7 @@ namespace JOY_UI_LAYER.SysAdmin
             this.TxtLryOwnrName.Location = new System.Drawing.Point(153, 55);
             this.TxtLryOwnrName.Name = "TxtLryOwnrName";
             this.TxtLryOwnrName.Size = new System.Drawing.Size(349, 21);
-            this.TxtLryOwnrName.TabIndex = 2;
+            this.TxtLryOwnrName.TabIndex = 1;
             this.TxtLryOwnrName.GotFocus += new System.EventHandler(this.TxtLryOwnrName_GotFocus);
             this.TxtLryOwnrName.LostFocus += new System.EventHandler(this.TxtLryOwnrName_LostFocus);
             // 
@@ -100,11 +99,10 @@ namespace JOY_UI_LAYER.SysAdmin
             // 
             // ChkActive
             // 
-            this.ChkActive.AutoSize = true;
             this.ChkActive.Location = new System.Drawing.Point(153, 239);
             this.ChkActive.Name = "ChkActive";
-            this.ChkActive.Size = new System.Drawing.Size(56, 17);
-            this.ChkActive.TabIndex = 28;
+            this.ChkActive.Size = new System.Drawing.Size(66, 18);
+            this.ChkActive.TabIndex = 4;
             this.ChkActive.Text = "Active";
             this.ChkActive.UseVisualStyleBackColor = true;
             // 
@@ -113,7 +111,7 @@ namespace JOY_UI_LAYER.SysAdmin
             this.CmdClear.Location = new System.Drawing.Point(191, 263);
             this.CmdClear.Name = "CmdClear";
             this.CmdClear.Size = new System.Drawing.Size(129, 36);
-            this.CmdClear.TabIndex = 30;
+            this.CmdClear.TabIndex = 6;
             this.CmdClear.Text = "C&lear";
             this.CmdClear.UseVisualStyleBackColor = true;
             this.CmdClear.Click += new System.EventHandler(this.CmdClear_Click);
@@ -123,7 +121,7 @@ namespace JOY_UI_LAYER.SysAdmin
             this.CmdCancel.Location = new System.Drawing.Point(326, 263);
             this.CmdCancel.Name = "CmdCancel";
             this.CmdCancel.Size = new System.Drawing.Size(129, 36);
-            this.CmdCancel.TabIndex = 31;
+            this.CmdCancel.TabIndex = 7;
             this.CmdCancel.Text = "&Cancel";
             this.CmdCancel.UseVisualStyleBackColor = true;
             this.CmdCancel.Click += new System.EventHandler(this.CmdCancel_Click);
@@ -133,7 +131,7 @@ namespace JOY_UI_LAYER.SysAdmin
             this.CmdSave.Location = new System.Drawing.Point(56, 263);
             this.CmdSave.Name = "CmdSave";
             this.CmdSave.Size = new System.Drawing.Size(129, 36);
-            this.CmdSave.TabIndex = 29;
+            this.CmdSave.TabIndex = 5;
             this.CmdSave.Text = "&Save";
             this.CmdSave.UseVisualStyleBackColor = true;
             this.CmdSave.Click += new System.EventHandler(this.CmdSave_Click);
@@ -144,7 +142,7 @@ namespace JOY_UI_LAYER.SysAdmin
             this.TxtLryNumber.Location = new System.Drawing.Point(153, 86);
             this.TxtLryNumber.Name = "TxtLryNumber";
             this.TxtLryNumber.Size = new System.Drawing.Size(349, 21);
-            this.TxtLryNumber.TabIndex = 3;
+            this.TxtLryNumber.TabIndex = 2;
             this.TxtLryNumber.GotFocus += new System.EventHandler(this.TxtLryNumber_GotFocus);
             this.TxtLryNumber.LostFocus += new System.EventHandler(this.TxtLryNumber_LostFocus);
             // 
@@ -155,7 +153,7 @@ namespace JOY_UI_LAYER.SysAdmin
             this.TxtLryDesc.Multiline = true;
             this.TxtLryDesc.Name = "TxtLryDesc";
             this.TxtLryDesc.Size = new System.Drawing.Size(349, 110);
-            this.TxtLryDesc.TabIndex = 4;
+            this.TxtLryDesc.TabIndex = 3;
             this.TxtLryDesc.GotFocus += new System.EventHandler(this.TxtLryDesc_GotFocus);
             this.TxtLryDesc.LostFocus += new System.EventHandler(this.TxtLryDesc_LostFocus);
             // 
@@ -165,7 +163,7 @@ namespace JOY_UI_LAYER.SysAdmin
             this.TxtLryName.Location = new System.Drawing.Point(153, 26);
             this.TxtLryName.Name = "TxtLryName";
             this.TxtLryName.Size = new System.Drawing.Size(349, 21);
-            this.TxtLryName.TabIndex = 1;
+            this.TxtLryName.TabIndex = 0;
             this.TxtLryName.GotFocus += new System.EventHandler(this.TxtLryName_GotFocus);
             this.TxtLryName.LostFocus += new System.EventHandler(this.TxtLryName_LostFocus);
             // 

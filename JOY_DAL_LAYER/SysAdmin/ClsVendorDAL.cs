@@ -5,14 +5,23 @@ using System.Text;
 using JOY_BUS_LAYER.SysAdmin;
 using System.Data;
 using JOY_BUS_LAYER.Common;
+using JOY_BUS_LAYER.Utilities;
+using JOY_DAL_LAYER.DataAccessComponent;
 
 namespace JOY_DAL_LAYER.SysAdmin
 {
     public class ClsVendorDAL:IDisposable
     {
-        public int FunPubVendorTransaction(ClsVendorEntity Vendor, out int VendorID)
+        public ClsVendorDAL()
         {
-            VendorID = 0;
+            DALModule.ConnName = ClsUtilities.GETPASS(ClsUtilities.FunPubGetFileContents(Environment.CurrentDirectory + @"\PROC.RDN")).Split('|');
+            DALModule.Connection = DALModule.ConnName[0];
+            DALModule.DPFactory = new DataProvider(DALModule.Connection, DataProvider.DBType.MYSQL);
+            DALModule.DALlogger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+            DALModule.PARAMS = new Dictionary<string, Object>();
+        }
+        public DataSet FunPubVendorTransaction(ClsVendorEntity Vendor)
+        {
             try
             {
                 DALModule.PARAMS.Add(PARAMETERS.P_MODE, Vendor.MODE);
@@ -36,15 +45,13 @@ namespace JOY_DAL_LAYER.SysAdmin
                 DALModule.PARAMS.Add(PARAMETERS.P_CMPID, Vendor.COMPANYID);
                 DALModule.PARAMS.Add(PARAMETERS.P_AID, Vendor.ADDERID);
                 DALModule.PARAMS.Add(PARAMETERS.P_MID, Vendor.MODIFIERID);
-                DALModule.PARAMS.Add(PARAMETERS.P_OUTPUT, null);
-                DALModule.EXECRESULT = DALModule.DPFactory.ExecuteNonQuery(PROCEDURES.PROC_ADD_EDIT_DELETE_VENDORDETAILS, DALModule.PARAMS);
-                VendorID = Convert.ToInt32(DALModule.DPFactory.GetParameter(PARAMETERS.P_OUTPUT.Replace("|OUT", ""), "OUT", null).Value);
+                DALModule.DSRESULT = DALModule.DPFactory.FillDataset(DALModule.DPFactory.GetConnection(), PROCEDURES.PROC_ADD_EDIT_DELETE_VENDORDETAILS, CommandType.StoredProcedure, DALModule.PARAMS);
             }
             catch (Exception ex)
             {
                 DALModule.DALlogger.Error("Error in ClsVendorDAL in FunPubVendorTransaction", ex);
             }
-            return DALModule.EXECRESULT;
+            return DALModule.DSRESULT;
         }
         public DataTable FunPubFetchVendorDetails(ClsVendorEntity Vendor)
         {

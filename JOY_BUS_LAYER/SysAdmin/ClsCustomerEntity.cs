@@ -22,7 +22,7 @@ namespace JOY_BUS_LAYER.SysAdmin
         public string CUSTPHONE { get; set; }
         public string CUSTMOBPHONE { get; set; }
         public int COMPANYID { get; set; }
-        public int CUSTACTIVE { get; set; }
+        public bool CUSTACTIVE { get; set; }
         public int ADDERID { get; set; }
         public DateTime ADDEDDATE { get; set; }
         public int MODIFIERID { get; set; }
