@@ -50,6 +50,7 @@
             this.CmdCancel.TabIndex = 3;
             this.CmdCancel.Text = "&Cancel";
             this.CmdCancel.UseVisualStyleBackColor = true;
+            this.CmdCancel.Click += new System.EventHandler(this.CmdCancel_Click);
             // 
             // CmdSubmit
             // 
@@ -59,13 +60,14 @@
             this.CmdSubmit.TabIndex = 2;
             this.CmdSubmit.Text = "&Submit";
             this.CmdSubmit.UseVisualStyleBackColor = true;
+            this.CmdSubmit.Click += new System.EventHandler(this.CmdSubmit_Click);
             // 
             // Label2
             // 
             this.Label2.AutoSize = true;
             this.Label2.Location = new System.Drawing.Point(178, 98);
             this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(57, 15);
+            this.Label2.Size = new System.Drawing.Size(69, 15);
             this.Label2.TabIndex = 11;
             this.Label2.Text = "Password";
             // 
@@ -75,23 +77,27 @@
             this.TxtPwd.Location = new System.Drawing.Point(254, 96);
             this.TxtPwd.Name = "TxtPwd";
             this.TxtPwd.PasswordChar = '*';
-            this.TxtPwd.Size = new System.Drawing.Size(260, 23);
+            this.TxtPwd.Size = new System.Drawing.Size(260, 21);
             this.TxtPwd.TabIndex = 1;
+            this.TxtPwd.GotFocus += new System.EventHandler(this.TxtPwd_GotFocus);
+            this.TxtPwd.LostFocus += new System.EventHandler(this.TxtPwd_LostFocus);
             // 
             // TxtUserName
             // 
             this.TxtUserName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxtUserName.Location = new System.Drawing.Point(254, 56);
             this.TxtUserName.Name = "TxtUserName";
-            this.TxtUserName.Size = new System.Drawing.Size(260, 23);
+            this.TxtUserName.Size = new System.Drawing.Size(260, 21);
             this.TxtUserName.TabIndex = 0;
+            this.TxtUserName.GotFocus += new System.EventHandler(this.TxtUserName_GotFocus);
+            this.TxtUserName.LostFocus += new System.EventHandler(this.TxtUserName_LostFocus);
             // 
             // Label1
             // 
             this.Label1.AutoSize = true;
             this.Label1.Location = new System.Drawing.Point(178, 58);
             this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(37, 15);
+            this.Label1.Size = new System.Drawing.Size(43, 15);
             this.Label1.TabIndex = 8;
             this.Label1.Text = "Login";
             // 
@@ -109,7 +115,7 @@
             // 
             // FrmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(536, 194);
@@ -120,7 +126,7 @@
             this.Controls.Add(this.TxtUserName);
             this.Controls.Add(this.Label1);
             this.Controls.Add(this.PicLogin);
-            this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.KeyPreview = true;
             this.MaximizeBox = false;
@@ -131,8 +137,10 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Welcome to Inventory Management System";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.FrmLogin_Load);
+            this.Activated +=new System.EventHandler(FrmLogin_Activated);
+            this.KeyDown+=new System.Windows.Forms.KeyEventHandler(FrmLogin_KeyDown);
+            this.KeyPress+=new System.Windows.Forms.KeyPressEventHandler(FrmLogin_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.PicLogin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

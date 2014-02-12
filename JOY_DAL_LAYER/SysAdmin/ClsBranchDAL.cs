@@ -7,16 +7,17 @@ using System.Data;
 using JOY_BUS_LAYER.Common;
 using JOY_BUS_LAYER.Utilities;
 using JOY_DAL_LAYER.DataAccessComponent;
-
+using System.Windows.Forms;
 
 namespace JOY_DAL_LAYER.SysAdmin
 {
-    public class ClsBranchDAL:IDisposable
+    public class ClsBranchDAL : IDisposable
     {
         public ClsBranchDAL()
         {
-            DALModule.ConnName = ClsUtilities.GETPASS(ClsUtilities.FunPubGetFileContents(Environment.CurrentDirectory + @"\PROC.RDN")).Split('|');
+            DALModule.ConnName = ClsUtilities.GETPASS(ClsUtilities.FunPubGetFileContents(Application.StartupPath + @"\PROC.RDN")).Split('|');
             DALModule.Connection = DALModule.ConnName[0];
+            DALModule.Connection += "Convert Zero Datetime=True";
             DALModule.DPFactory = new DataProvider(DALModule.Connection, DataProvider.DBType.MYSQL);
             DALModule.DALlogger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
             DALModule.PARAMS = new Dictionary<string, Object>();
@@ -55,7 +56,7 @@ namespace JOY_DAL_LAYER.SysAdmin
             }
             return DALModule.DSRESULT;
         }
-        
+
         /// <summary>
         /// Fetches the Branch details from the database.
         /// </summary>
@@ -67,9 +68,11 @@ namespace JOY_DAL_LAYER.SysAdmin
             {
                 DALModule.PARAMS.Add(PARAMETERS.P_ACTIVE, Branch.BRANCHACTIVE);
                 DALModule.PARAMS.Add(PARAMETERS.P_CMPID, Branch.COMPANYID);
+                DALModule.PARAMS.Add(PARAMETERS.P_BRANCHID, Branch.BRANCHID);
                 DALModule.PARAMS.Add(PARAMETERS.P_BRANCHNAME, Branch.BRANCHNAME);
-                DALModule.PARAMS.Add(PARAMETERS.P_ADT, Branch.ADDEDDATE);
-                DALModule.PARAMS.Add(PARAMETERS.P_MDT, Branch.MODIFIEDDATE);
+                DALModule.PARAMS.Add(PARAMETERS.P_BRANCHCODE, Branch.BRANCHCODE);
+                DALModule.PARAMS.Add(PARAMETERS.P_SDT, Branch.ADDEDDATE);
+                DALModule.PARAMS.Add(PARAMETERS.P_FDT, Branch.MODIFIEDDATE);
                 DALModule.PARAMS.Add(PARAMETERS.P_ALLFLDSTAT, Branch.ALLFIELDSTAT);
                 DALModule.DTRESULT = DALModule.DPFactory.GetDataTable(PROCEDURES.PROC_FETCH_BRANCHDETAILS, DALModule.PARAMS);
             }
@@ -79,11 +82,12 @@ namespace JOY_DAL_LAYER.SysAdmin
             }
 
             return DALModule.DTRESULT;
+
         }
 
         public void Dispose()
         {
-            
+
         }
     }
 }

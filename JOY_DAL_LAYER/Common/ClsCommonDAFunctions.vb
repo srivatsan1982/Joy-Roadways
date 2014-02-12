@@ -19,7 +19,7 @@ Public Class ClsCommonDAFunctions
 
 #Region "Constructor"
     Public Sub New()
-        ConnName = Utility.GETPASS(Utility.FunPubGetFileContents(Environment.CurrentDirectory & "\PROC.RDN")).Split("|")
+        ConnName = Utility.GETPASS(Utility.FunPubGetFileContents(Application.StartupPath & "\PROC.RDN")).Split("|")
         Connection = ConnName(0)
         DPFactory = New DataProvider(Connection, DataProvider.DBType.MYSQL)
         DALlogger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType)

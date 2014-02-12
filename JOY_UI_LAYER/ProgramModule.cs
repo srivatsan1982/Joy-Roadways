@@ -12,6 +12,8 @@ using System.Windows.Forms;
 using System.Drawing;
 using JOY_UI_LAYER.SysAdmin;
 using JOY_UI_LAYER.Common;
+using JOY_BUS_LAYER.SysAdmin;
+using JOY_CONTROL_LAYER.SysAdmin;
 
 namespace JOY_UI_LAYER
 {
@@ -22,16 +24,15 @@ namespace JOY_UI_LAYER
         public const int ALLOWMULTICMP = 0;
         public const int ALLOWMULTICOUNTER = 0;
         public string ITEM_ENTRY_PWD = "";
-        public int Uid;
+        public static int Uid;
         public int POS;
         public byte TOTDISCNTASAMT;
         public bool kp;
         public int USRLVL;
-        public string USRNM;
-        public string CNTRS;
-        public string APPDATE;
-        public string PERIOD;
-        public string SYSPATH;
+        public static string USRNM;
+        public static string APPDATE;
+        public static string PERIOD;
+        public static string SYSPATH;
         public string CURRYR;
         public byte FRMCONTCALL;
         public byte BKGTRANS;
@@ -48,8 +49,8 @@ namespace JOY_UI_LAYER
         public byte FRMNTFYCALL;
         public byte FRMFCSIGNCALL;
         public byte FRMPRODCALL;
-        public string MsgboxCaption = "Joy Roadways Logistics";
-        public string REP;
+        public static string MsgboxCaption = "Joy Roadways Logistics";
+        public static string REP;
         public bool PRNTFLG;
         public byte BILLADJSTFLG;
         public int FLDTYPE;
@@ -59,24 +60,24 @@ namespace JOY_UI_LAYER
         private bool NOTOK;
         public bool CNTRLFLG;
         public bool EDITDS;
-        public object FrmMdiMain;
+        public static dynamic FrmMdiMain;
         public bool ISITLITE;
         string AA;
         string EXIST;
         string SCODE;
         string Time;
         public bool MLSIAMOD;
-        public bool SAVED;
+        public static bool SAVED;
         public bool DELETED;
         public string LMsg;
         public LstItemData CLS = new LstItemData("", "");
-        public FrmMdiMain objFrmMdiMain = new FrmMdiMain();
+        public static FrmMdiMain objFrmMdiMain = new FrmMdiMain();
         //public ManagementObjectSearcher objMOS;
         //public ManagementObjectCollection objMOC;
         //public ManagementObject objMO;
         public string DateFormat;
         public bool DateSetDt;
-        public object ActiveChildForm;
+        public static dynamic ActiveChildForm;
         public FrmHlpGrd sFrmHlpGrd = new FrmHlpGrd();
         public OleDbTransaction Tran;
         public System.IO.TextReader TReader;
@@ -117,13 +118,12 @@ namespace JOY_UI_LAYER
         public byte CAFSTYLE;
         public bool CADDATBTM;
         public bool SHOWRPT;
-        public string CBM_SETTING;
-        public string CURRENCY_NAME;
-        public string CURRENCY_SYMBOL;
-        public string CURRENCY_CODE;
-        public string CURRENCY_PAISE;
-        public string LOCAL_PORT;
-        public float EXCHANGE_RATE;
+        public static string CBM_SETTING;
+        public static string CURRENCY_NAME;
+        public static string CURRENCY_SYMBOL;
+        public static string CURRENCY_CODE;
+        public static string CURRENCY_PAISE;
+        public static float EXCHANGE_RATE;
         public string CFNAME;
         public string AFNAME;
         public byte CFSIZE;
@@ -140,7 +140,7 @@ namespace JOY_UI_LAYER
         public const int MODIFY = 2;
         public const int DELETE = 3;
         public const int VIEW = 4;
-        public int CMPID;
+        public static int CMPID;
         public string SELECTEDLOCATION;
         public Color INFOCUS = Color.Lavender;
         public Color OUTFOCUS = Color.White;
@@ -158,14 +158,14 @@ namespace JOY_UI_LAYER
         public bool EOUSAM;
         public bool EOUIVV;
         public bool RESTRICT;
-        public bool CANFLG;
+        public static bool CANFLG;
         // Key is preserved when system is rebooted
         public string RemoteHost;
         public int NOUSR;
         public byte OVERWRITE;
         public bool SendComplete;
-        public bool ISITOK;
-        public bool LOADED;
+        public static bool ISITOK;
+        public static bool LOADED;
         public const string FIRSTTIME = "01";
         public const string SYSVALID = "02";
         public const string SYSNOTVALID = "03";
@@ -207,15 +207,15 @@ namespace JOY_UI_LAYER
         public bool DBFLG;
         public bool ZEROCOL;
         public bool CLNTFLAG;
-        public bool TFLAG;
-        public bool RFLAG;
-        public bool SAVEFLAG;
+        public static bool TFLAG;
+        public static bool RFLAG;
+        public static bool SAVEFLAG;
         public string EXQRY;
         public string HLPOledb;
         public float GRDHEIGHT;
         public const string RPASS = "MAHIS";
         public string[] DATATYPES = new string[4];
-        const int ERROR_SUCCESS = 0;
+
         // Unicode nul terminated string
         const int REG_SZ = 1;
         // 32-bit number
@@ -236,15 +236,15 @@ namespace JOY_UI_LAYER
             public int Ymove;
         }
         // ERROR: Not supported in C#: DeclareDeclaration
-        public string COMPANY_NAME;
-        public int COMPANYID;
-        public string UPLS_STATE;
-        public string ADDRESS;
-        public string PH;
-        public string FAX;
-        public string EMAIL;
-        public string REGCODE;
-        public string AGENTCODE;
+        public static string COMPANY_NAME;
+        public static int COMPANYID;
+        public static string UPLS_STATE;
+        public static string ADDRESS;
+        public static string PH;
+        public static string FAX;
+        public static string EMAIL;
+        public static string REGCODE;
+        public static string AGENTCODE;
         string TT;
         string[] RR;
         public string OraService;
@@ -260,7 +260,7 @@ namespace JOY_UI_LAYER
         public object Fso;
         public string HLPDATA1;
         public string HLPDATA2;
-        public string USRNAME;
+        public static string USRNAME;
         public string HLPDATA3;
         public string ostr;
         public string FRMRIGHTS;
@@ -268,8 +268,8 @@ namespace JOY_UI_LAYER
         public string LSTR;
         public string RT;
         public string[] SLOC;
-        public string MM;
-        public string YY;
+        public static string MM;
+        public static string YY;
         public string CRDID;
         public string FLD2;
         public string FLD3;
@@ -304,12 +304,7 @@ namespace JOY_UI_LAYER
         //13
         public const Keys KEY_ENTER = Keys.Enter;
         public const Keys KEY_ESC = Keys.Escape;
-        public const short KEY_QUERY_VALUE = 0x1;
-        public const short KEY_SET_VALUE = 0x2;
-        public const short KEY_CREATE_SUB_KEY = 0x4;
-        public const short KEY_ENUMERATE_SUB_KEYS = 0x8;
-        public const short KEY_NOTIFY = 0x10;
-        public const short KEY_CREATE_LINK = 0x20;
+
         //todo public const string SYNCHRONIZE = "0x100000";
         //public const bool KEY_ALL_ACCESS = ((STANDARD_RIGHTS_ALL | KEY_QUERY_VALUE | KEY_SET_VALUE | KEY_CREATE_SUB_KEY | KEY_ENUMERATE_SUB_KEYS | KEY_NOTIFY | KEY_CREATE_LINK) & (!SYNCHRONIZE));
         //***********************************    
@@ -330,10 +325,10 @@ namespace JOY_UI_LAYER
             // Form Tag
             public string frmTag;
         }
-        public ShowForms[] ShwFrm;
-        public int FrmNo;
+        public static ShowForms[] ShwFrm;
+        public static int FrmNo;
         //FrmNo-count of form child's ,CurFrmNo-Current From Number
-        public int CurFrmNo;
+        public static int CurFrmNo;
 
         public bool SkeySt;
         // using Shortcutkeys 
@@ -344,7 +339,7 @@ namespace JOY_UI_LAYER
         public string str;
         public string SS;
         public string TEMPSTR;
-        public DialogResult ch;
+        public static DialogResult ch;
         public string BLID;
 
         public OleDbDataReader ShippersRs;
@@ -383,32 +378,13 @@ namespace JOY_UI_LAYER
         public int PMV1;
         public string SCHEMECODE1;
         public string RITCCODE1;
-        public string[] ones = new string[10];
-        public string[] abones = new string[10];
-        public string[] tens = new string[10];
-        public string[] ext = new string[5];
-        public string[] cons = new string[5];
+        public static string[] ones = new string[10];
+        public static string[] abones = new string[10];
+        public static string[] tens = new string[10];
+        public static string[] ext = new string[5];
+        public static string[] cons = new string[5];
 
-        [DllImport("user32", EntryPoint = "SendMessageA")]
-        private static extern long SendMessage(long hwnd, long wMsg, long wParam, long lParam);
-        [DllImport("user32", EntryPoint = "SetForegroundWindow")]
-        private static extern long SetForegroundWindow(IntPtr hwnd);
-        [DllImport("inpout32.dll", EntryPoint = "Inp32")]
-        private static extern byte Inp(int PortAddress);
-        [DllImport("inpout32.dll", EntryPoint = "Out32")]
-        private static extern long Out(int PortAddress, byte Value);
-        [DllImport("advapi32", EntryPoint = "RegOpenKeyExA")]
-        private static extern long RegOpenKeyEx(long hKey, string lpSubKey, long ulOptions, long samDesired, long phkResult);
-        [DllImport("advapi32", EntryPoint = "RegQueryValueExA")]
-        private static extern long RegQueryValueEx(long hKey, string lpValueName, long lpReserved, long lpType, string lpData, long lpcbData);
-        [DllImport("advapi32")]
-        private static extern long RegCloseKey(long hKey);
-        [DllImport("kernel32", EntryPoint = "GetComputerNameA")]
-        private static extern int GetComputerName(string lpBuffer, int nSize);
-        [DllImport("kernel32")]
-        private static extern void Sleep(int dwMilliseconds);
-        [DllImport("advapi32", EntryPoint = "RegSetValueExA")]
-        private static extern long RegSetValueEx(long hKey, string lpValueName, long lpReserved, long lpType, string lpData, long lpcbData);
+
 
         /// <summary>
         /// The main entry point for the application.
@@ -416,9 +392,23 @@ namespace JOY_UI_LAYER
         [STAThread]
         static void Main()
         {
+            //Application.SetCompatibleTextRenderingDefault(false);
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmVendorMaster());
+            APPDATE = DateTime.Now.ToString();
+            if (GETUSRLST(ref Uid, ref USRNAME))
+            {
+                FrmMdiMain objFrmMdiMain = new FrmMdiMain();
+                objFrmMdiMain.Uid = Uid;
+                FrmNo = 1;
+                if (Uid == 0)
+                {
+                    Application.Exit();
+                }
+                GCD(ref COMPANY_NAME, ref ADDRESS, ref PH, ref FAX, ref EMAIL, ref REGCODE);
+                objFrmMdiMain.ShowDialog();
+            }
+
+            //Application.Run(new FrmVendorMaster());
         }
 
         /// <summary>
@@ -438,28 +428,28 @@ namespace JOY_UI_LAYER
             return MsgCmd;
         }
 
-        /// <summary>
-        /// To check if the Application is already running
-        /// </summary>
-        /// Created On : 22/12/2013
-        /// Created by : Srivatsan.S
-        /// <returns></returns>
-        public bool AppIsAlreadyRunning()
-        {
-            Process c = Process.GetCurrentProcess();
-            foreach (Process p in Process.GetProcessesByName(c.ProcessName))
-            {
-                if (p.Id != c.Id)
-                {
-                    if (p.MainModule.FileName.ToLower().Equals(c.MainModule.FileName.ToLower()))
-                    {
-                        SetForegroundWindow(p.MainWindowHandle);
-                        return true;
-                    }
-                }
-            }
-            return false;
-        }
+        ///// <summary>
+        ///// To check if the Application is already running
+        ///// </summary>
+        ///// Created On : 22/12/2013
+        ///// Created by : Srivatsan.S
+        ///// <returns></returns>
+        //public bool AppIsAlreadyRunning()
+        //{
+        //    Process c = Process.GetCurrentProcess();
+        //    foreach (Process p in Process.GetProcessesByName(c.ProcessName))
+        //    {
+        //        if (p.Id != c.Id)
+        //        {
+        //            if (p.MainModule.FileName.ToLower().Equals(c.MainModule.FileName.ToLower()))
+        //            {
+        //                SetForegroundWindow(p.MainWindowHandle);
+        //                return true;
+        //            }
+        //        }
+        //    }
+        //    return false;
+        //}
 
         /// <summary>
         /// Initializes the array variables for string formation. The Connect() function in Fastbilling has been named as InitializeVariables
@@ -746,7 +736,7 @@ namespace JOY_UI_LAYER
             return functionReturnValue;
         }
 
-        public bool FindFrm(string frmName, string frmTag = "")
+        public static  bool FindFrm(string frmName, string frmTag = "")
         {
             bool functionReturnValue = false;
 
@@ -823,96 +813,8 @@ namespace JOY_UI_LAYER
             return functionReturnValue;
         }
 
-        public void CHKVALID(string S1, ref object S2)
-        {
-            if (S1 == "MAHIS")
-            {
-                NOTOK = false;
-                Fso = new System.Object();
-                if (Convert.ToInt32(S2) != 0)
-                    LGM = S2;
-            }
-            else
-            {
-                NOTOK = true;
-                Fso = null;
-            }
-
-        }
-
-        private void ACCESSDENIED()
-        {
-            MessageBox.Show("You do not have rights to access this method !", MsgboxCaption, MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-
-        }
-
-        private void Class1_Initialize()
-        {
-            NOTOK = true;
-            RD = "0";
-
-        }
-
-        public void SetKeyValue(long key_root, string key_name, string subkey_name, string Value)
-        {
-            long hKey = 0;
-            long length = 0;
-            long value_type = 0;
-
-            //Dim key_num As Integer
-
-            // open the key
 
 
-            if (RegOpenKeyEx(key_root, key_name, 0L, KEY_QUERY_VALUE, hKey) != ERROR_SUCCESS)
-            {
-                return;
-
-            }
-            length = Value.Length;
-            value_type = 1;
-            if (RegSetValueEx(hKey, subkey_name, 0, value_type, Value, length) != ERROR_SUCCESS)
-            {
-                return;
-            }
-            RegCloseKey(hKey);
-        }
-        public bool DESTRUCT()
-        {
-            bool functionReturnValue = false;
-
-            functionReturnValue = false;
-            if (NOTOK) { ACCESSDENIED(); return functionReturnValue; }
-            if (!string.IsNullOrEmpty(SELECTEDLOCATION))
-            {
-                for (I = 0; I <= LOCS.GetUpperBound(LOCS.Length); I++)
-                {
-                    if (LOCS[I].LOCATION == SELECTEDLOCATION)
-                    {
-                        if (LOCS[I].DSN == "OledbFR")
-                        {
-                        }
-                        else
-                        {
-                            for (J = 0; J <= LOCS.GetUpperBound(LOCS.Length); J++)
-                            {
-                                if (LOCS[J].DSN == "OledbFR")
-                                {
-                                    subkey_name = LOCS[J].DSN;
-                                    REPLACESERVER = LOCS[J].SERVERNAME;
-                                    SetKeyValue(HKEY_LOCAL_MACHINE, "Software\\ODBC\\ODBC.INI\\" + subkey_name, "Server", REPLACESERVER);
-                                    break; // TODO: might not be correct. Was : Exit For
-                                }
-                            }
-                        }
-                        break; // TODO: might not be correct. Was : Exit For
-                    }
-                }
-            }
-            functionReturnValue = true;
-            return functionReturnValue;
-
-        }
         //public bool CHKSEC(object S1, object S2, ref string[] SS)
         //{
         //    bool functionReturnValue = false;
@@ -978,36 +880,17 @@ namespace JOY_UI_LAYER
 
         //}
 
-        public bool GETUSRLST(ref int S1, ref string S2, byte S3 = 0)
+        public static bool GETUSRLST(ref int S1, ref string S2, byte S3 = 0)
         {
             bool functionReturnValue = false;
 
             functionReturnValue = false;
-            if (NOTOK) { ACCESSDENIED(); return functionReturnValue; }
-            //If S3 <> 0 Then CALLBYSETTING = S3
-            CALLBYSETTING = S3;
-            if (ISITLITE)
-            {
-                Uid = 1;
-                USRNAME = "Lite Version";
-                ISITOK = true;
-            }
-            else
-            {
-                LOADED = false;
-                ISITOK = false;
-                FrmUser Frm = new FrmUser();
-                Frm.ShowDialog();
+            FrmLogin Frm = new FrmLogin();
+            Frm.ShowDialog();
 
-                //'Do Until LOADED
-                //'    '' DoEvents()
-                //'Loop
-            }
             S1 = Uid;
             S2 = USRNAME;
-            // Dim D As Date
-            // D = CDate(APPDATE)
-            //  MM = Month(D)
+
             try
             {
                 MM = Convert.ToDateTime(APPDATE).Month.ToString();
@@ -1029,39 +912,38 @@ namespace JOY_UI_LAYER
             string s = "";
             s = @"01/04/" + YY;
             PERIOD = Convert.ToDateTime(s).ToString("dd/MM/yyyy");
-            functionReturnValue = ISITOK;
+            functionReturnValue = true;
             return functionReturnValue;
 
         }
 
-        public void GCD(ref string S1, ref string S2, ref string S3, ref string S4, ref string S5, ref string S6)
+        public static void GCD(ref string S1, ref string S2, ref string S3, ref string S4, ref string S5, ref string S6)
         {
-            if (NOTOK)
-            {
-                ACCESSDENIED(); return;
-            }
-            //If COMPANY_NAME = "TRANSOCEAN FREIGHT SERVICES Pvt Ltd" Then
-            //    RESTRICT = False
-            //Else
-            //    RESTRICT = True
-            //End If
             FrmSCompany OBJFrmSCompany = new FrmSCompany();
             OBJFrmSCompany.Show();
 
-            //DSet = New DataSet()
-            //OledbDA = New OleDbDataAdapter("SELECT CMPID,CNAME,ADD1,ADD2,CITY,PH,FAX,EMAIL,CURRNM,CURSYM,CURCD,CURPAISE,REGCODE FROM FBILL_COMPANY_MASTER WHERE CMPID=" & CMPID, OledbCon)
-            //OledbDA.Fill(DSet)
-            //CMPID = Convert.ToInt32(DSet.Tables(0).Rows(0)("CMPID"))
-            //COMPANY_NAME = Convert.ToString(DSet.Tables(0).Rows(0)("CNAME"))
-            //ADDRESS = Convert.ToString(DSet.Tables(0).Rows(0)("ADD1")) & " " & Convert.ToString(DSet.Tables(0).Rows(0)("ADD2")) & " " & Convert.ToString(DSet.Tables(0).Rows(0)("CITY"))
-            //PH = Convert.ToString(DSet.Tables(0).Rows(0)("PH"))
-            //FAX = Convert.ToString(DSet.Tables(0).Rows(0)("FAX"))
-            //EMAIL = Convert.ToString(DSet.Tables(0).Rows(0)("EMAIL"))
-            //CURRENCY_NAME = Convert.ToString(DSet.Tables(0).Rows(0)("CURRNM"))
-            //CURRENCY_SYMBOL = Convert.ToString(DSet.Tables(0).Rows(0)("CURSYM"))
-            //CURRENCY_CODE = Convert.ToString(DSet.Tables(0).Rows(0)("CURCD"))
-            //CURRENCY_PAISE = Convert.ToString(DSet.Tables(0).Rows(0)("CURPAISE"))
-            //REGCODE = Convert.ToString(DSet.Tables(0).Rows(0)("REGCODE"))
+            using (ClsCompanyController objCompanyControl = new ClsCompanyController())
+            {
+                using (ClsCompanyEntity objcompanyEntity = new ClsCompanyEntity())
+                {
+                    objcompanyEntity.COMPANYID = CMPID;
+                    objcompanyEntity.ALLFIELDSTAT = 1;
+                    DataTable DTCompany = objCompanyControl.FunPubFetchCompany(objcompanyEntity);
+                    CMPID = Convert.ToInt32(DTCompany.Rows[0]["CMPID"]);
+                    COMPANY_NAME = Convert.ToString(DTCompany.Rows[0]["CMPNAME"]);
+                    ADDRESS = Convert.ToString(DTCompany.Rows[0]["CMPADD1"]) + " " + Convert.ToString(DTCompany.Rows[0]["CMPADD2"]) + " " + Convert.ToString(DTCompany.Rows[0]["CMPCITY"]);
+                    PH = Convert.ToString(DTCompany.Rows[0]["CMPPHONE"]);
+                    FAX = Convert.ToString(DTCompany.Rows[0]["CMPFAX"]);
+                    EMAIL = Convert.ToString(DTCompany.Rows[0]["CMPEMAIL"]);
+                    CURRENCY_NAME = Convert.ToString(DTCompany.Rows[0]["CMPCURRNAME"]);
+                    CURRENCY_SYMBOL = Convert.ToString(DTCompany.Rows[0]["CMPCURRSYM"]);
+                    CURRENCY_CODE = Convert.ToString(DTCompany.Rows[0]["CMPCURRCODE"]);
+                    CURRENCY_PAISE = Convert.ToString(DTCompany.Rows[0]["CMPCURRPAISE"]);
+                    REGCODE = Convert.ToString(DTCompany.Rows[0]["CMPTINNO"]);
+                }
+            }
+
+
             //intialisation for variables used for amt to text
             ones[1] = " One ";
             ones[2] = " Two ";
@@ -1099,7 +981,7 @@ namespace JOY_UI_LAYER
             ext[4] = " Crore ";
 
             cons[1] = " and ";
-            cons[2] = ICase(CURRENCY_PAISE).ToString();
+            //cons[2] = ICase(CURRENCY_PAISE).ToString();
             //" Sents " '" Paise "
             cons[3] = " Only ";
             cons[4] = "";
@@ -1156,288 +1038,35 @@ namespace JOY_UI_LAYER
         //    return functionReturnValue;
 
         //}
-       
-  
-        
-        public object SPLITSTR(object STRVAL, byte NOCHR)
-        {
-            string RESULT = null;
-            RESULT = "";
-            for (int I = 1; I <= Strings.Len(STRVAL); I++)
-            {
-                RESULT = RESULT + Strings.Mid(STRVAL.ToString(), I, 1) + Strings.Space(NOCHR);
-            }
-            return Strings.Trim(RESULT);
-        }
-       public bool CONTVALID(string S1, string S2, ref object S3)
-        {
-            bool functionReturnValue = false;
 
-            functionReturnValue = false;
-            if (NOTOK) { ACCESSDENIED(); return functionReturnValue; }
-            int[] NAMEVAL = new int[26];
-            dynamic TOTVAL = null;
-            dynamic K = null;
-            dynamic I = null;
-            dynamic LASTVAL = null;
-            dynamic JJ = null;
-            TOTVAL = 0;
-            K = 0;
-            JJ = 10;
-            for (I = 0; I <= Information.UBound(NAMEVAL); I++)
-            {
-                NAMEVAL[I] = JJ;
-                JJ = JJ + 1;
-                if (JJ % 11 == 0)
-                    JJ = JJ + 1;
-            }
-            S1 = Strings.Trim(S1);
-            S2 = Strings.Replace(Strings.Trim(S2), "-", "");
-            for (I = 1; I <= 4; I++)
-            {
-                TOTVAL = TOTVAL + NAMEVAL[Strings.Asc(Strings.Mid(S1, I, 1)) - 65] * (Math.Pow(2, K));
-                K = K + 1;
-            }
-            for (I = 1; I <= 6; I++)
-            {
-                TOTVAL = TOTVAL + Conversion.Val(Strings.Mid(S2, I, 1)) * (Math.Pow(2, K));
-                K = K + 1;
-            }
-            LASTVAL = TOTVAL % 11;
-            if (LASTVAL == 10)
-                LASTVAL = 0;
-            S3 = Strings.Trim(LASTVAL);
-            if (LASTVAL == Conversion.Val(Strings.Trim(Strings.Right(S2, 1))))
-                functionReturnValue = true;
-            return functionReturnValue;
-
-        }
-        public string ENSTR(string FSTR)
+        public static void SETPOS(dynamic WFrame, dynamic ObjFrm = null)
         {
-            string functionReturnValue = null;
-            functionReturnValue = "";
-            if (NOTOK)
-            {
-                ACCESSDENIED();
-                return functionReturnValue;
-            }
+            // ERROR: Not supported in C#: OnErrorStatement
 
-            byte[] RCHR = null;
-            byte rc = 0;
-            byte EXIST = 0;
-            string RSTR = null;
-            RCHR = new byte[Strings.Len(FSTR) + 1];
-            RSTR = "";
-            for (I = 1; I <= Strings.Len(FSTR); I++)
+            FrmMdiMain = new FrmMdiMain();
+            if (Information.IsDBNull(WFrame))
             {
-                do
+                FrmMdiMain.ActiveMdiChild.WIND.Left = (FrmMdiMain.ActiveMdiChild.ScaleWidth - FrmMdiMain.ActiveMdiChild.WIND.Width) / 2;
+                FrmMdiMain.ActiveMdiChild.WIND.Top = (FrmMdiMain.ActiveMdiChild.ScaleHeight - FrmMdiMain.ActiveMdiChild.WIND.Height) / 2;
+            }
+            else
+            {
+                if (ObjFrm == null)
                 {
-                    EXIST = 0;
-                    VBMath.Randomize();
-                    rc = Convert.ToByte(VBMath.Rnd() * (255 - Strings.Asc(Strings.Mid(FSTR, I, 1))));
-                    for (J = 1; J <= Information.UBound(RCHR); J++)
-                    {
-                        if (RCHR[J] == rc)
-                        {
-                            EXIST = 1;
-                            break; // TODO: might not be correct. Was : Exit For
-                        }
-                    }
-                } while (EXIST == 1);
-                RSTR = RSTR + Strings.Chr(rc) + Strings.Chr(Strings.Asc(Strings.Mid(FSTR, I, 1)) + rc);
-                RCHR[I] = rc;
-            }
-            functionReturnValue = RSTR;
-            return functionReturnValue;
-
-        }
-        public string DESTR(string FSTR)
-        {
-            string functionReturnValue = null;
-            functionReturnValue = "";
-            if (NOTOK) { ACCESSDENIED(); return functionReturnValue; }
-            string RSTR = "0";
-            byte rc = 0;
-            for (I = 1; I <= Strings.Len(FSTR); I += 2)
-            {
-                rc = Convert.ToByte(Strings.Asc(Strings.Mid(FSTR, I, 1)));
-                RSTR = Convert.ToString(RSTR + Strings.Chr(Strings.Asc(Strings.Mid(FSTR, I + 1, 1)) - rc));
-            }
-            functionReturnValue = RSTR;
-            return functionReturnValue;
-
-        }
-        public string SETRCD(string A)
-        {
-            string functionReturnValue = null;
-            //set reg code
-            functionReturnValue = "";
-            if (NOTOK) { ACCESSDENIED(); return functionReturnValue; }
-            for (I = 1; I <= Strings.Len(A); I++)
-            {
-                SCODE = SCODE + Strings.Trim(Strings.Mid(A, I, 1));
-            }
-            dynamic LL = null;
-            dynamic ESTR = null;
-            string FSTR = "0";
-            ESTR = "MAHIS";
-            LL = Strings.Len(ESTR);
-            J = 1;
-            for (I = 1; I <= Strings.Len(SCODE); I++)
-            {
-                FSTR = FSTR + Strings.Chr(Strings.Asc(Strings.Mid(SCODE, I, 1)) + Strings.Asc(Strings.Mid(ESTR, J, 1)));
-                J = J + 1;
-                if (J > LL)
-                    J = 1;
-            }
-            SCODE = FSTR;
-            FSTR = "";
-            for (I = 1; I <= Strings.Len(SCODE); I++)
-            {
-                FSTR = FSTR + Conversion.Hex(Strings.Asc(Strings.Mid(SCODE, I, 1)));
-            }
-            functionReturnValue = FSTR;
-            return functionReturnValue;
-
-        }
-        public string GETRCD(string A)
-        {
-            string functionReturnValue = null;
-            //get reg code
-            functionReturnValue = "";
-            if (NOTOK)
-            {
-                ACCESSDENIED();
-                return functionReturnValue;
-            }
-
-            for (int I = 1; I <= Strings.Len(A); I += 2)
-            {
-                SCODE = SCODE + Strings.Chr(Convert.ToInt32("&H" + Strings.Mid(A, I, 2)));
-            }
-            string FSTR = "0";
-            dynamic LL = null;
-            dynamic ESTR = null;
-            string[] AA = null;
-            ESTR = "MAHIS";
-            LL = Strings.Len(ESTR);
-            J = 1;
-            for (I = 1; I <= Strings.Len(SCODE); I++)
-            {
-                FSTR = FSTR + Strings.Chr(Strings.Asc(Strings.Mid(SCODE, I, 1)) - Strings.Asc(Strings.Mid(ESTR, J, 1)));
-                J = J + 1;
-                if (J > LL)
-                    J = 1;
-            }
-            A = FSTR;
-            SCODE = "";
-            AA = Strings.Split(FSTR, "-");
-            for (I = 1; I <= Information.UBound(AA); I++)
-            {
-                SCODE = SCODE + Strings.Trim(("-" + AA[I]));
-            }
-            //For I = 1 To Len(A) Step 2
-            //    Scode = Scode + Trim(Not Mid(A, I, 2))
-            //Next
-            functionReturnValue = SCODE;
-            return functionReturnValue;
-        }
-        public DataSet ImportExcelXLS(string FileName, string hasHeaders)
-        {
-            System.Data.OleDb.OleDbConnection MyConnection = null;
-            System.Data.DataSet DtSet = null;
-            System.Data.OleDb.OleDbDataAdapter MyCommand = null;
-            try
-            {
-                MyConnection = new System.Data.OleDb.OleDbConnection("provider=Microsoft.Jet.OLEDB.4.0; Data Source=" + FileName + ";Extended Properties=Excel 8.0;");
-                MyCommand = new System.Data.OleDb.OleDbDataAdapter("select * from [Table1$]", MyConnection);
-                MyCommand.TableMappings.Add("Table", "TestTable");
-                DtSet = new System.Data.DataSet();
-                MyCommand.Fill(DtSet);
-                MyConnection.Close();
-            }
-            catch (Exception ex)
-            {
-                Interaction.MsgBox(ex.ToString());
-            }
-            return DtSet;
-        }
-        public void ExportDatasetToExcel(DataSet ds, string strExcelFile)
-        {
-            OleDbConnection conn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + strExcelFile + ";Extended Properties=Excel 8.0;");
-            conn.Open();
-            string[] strTableQ = new string[ds.Tables.Count + 1];
-            int i = 0;
-            //making table query
-            for (i = 0; i <= ds.Tables.Count - 1; i++)
-            {
-                strTableQ[i] = "CREATE TABLE [" + ds.Tables[i].TableName + "](";
-                int j = 0;
-                for (j = 0; j <= ds.Tables[i].Columns.Count - 1; j++)
-                {
-                    DataColumn dCol = null;
-                    dCol = ds.Tables[i].Columns[j];
-                    strTableQ[i] += " [" + dCol.ColumnName + "] varchar(255) , ";
+                    WFrame.Left = (objFrmMdiMain.ActiveMdiChild.Width - WFrame.Width) / 2;
+                    WFrame.Top = (objFrmMdiMain.ActiveMdiChild.Height - WFrame.Height) / 2;
                 }
-                strTableQ[i] = strTableQ[i].Substring(0, strTableQ[i].Length - 2);
-                strTableQ[i] += ")";
-                OleDbCommand cmd = new OleDbCommand(strTableQ[i], conn);
-                cmd.ExecuteNonQuery();
-            }
-            //making insert query
-            string[] strInsertQ = new string[ds.Tables.Count];
-            for (i = 0; i <= ds.Tables.Count - 1; i++)
-            {
-                strInsertQ[i] = "Insert Into " + ds.Tables[i].TableName + " Values (";
-                for (int k = 0; k <= ds.Tables[i].Columns.Count - 1; k++)
-                {
-                    strInsertQ[i] += "@" + ds.Tables[i].Columns[k].ColumnName + " , ";
-                }
-                strInsertQ[i] = strInsertQ[i].Substring(0, strInsertQ[i].Length - 2);
-                strInsertQ[i] += ")";
-            }
-            //Now inserting data
-            for (i = 0; i <= ds.Tables.Count - 1; i++)
-            {
-                for (int j = 0; j <= ds.Tables[i].Rows.Count - 1; j++)
-                {
-                    OleDbCommand cmd = new OleDbCommand(strInsertQ[i], conn);
-                    for (int k = 0; k <= ds.Tables[i].Columns.Count - 1; k++)
-                    {
-                        cmd.Parameters.AddWithValue("@" + ds.Tables[i].Columns[k].ColumnName.ToString(), ds.Tables[i].Rows[j][k].ToString());
-                    }
-                    cmd.ExecuteNonQuery();
-                    cmd.Parameters.Clear();
-                }
-            }
-            conn.Close();
-        }
-        public object ICase(object STRVAL)
-        {
-            object functionReturnValue = null;
-            //INIT CASE
-
-            functionReturnValue = "";
-            if (NOTOK) { ACCESSDENIED(); return functionReturnValue; }
-            string C = null;
-            //* 1
-            int FLG = 0;
-            STRVAL = Strings.UCase(Strings.Trim(STRVAL.ToString()));
-            FLG = 1;
-            for (int I = 2; I <= Strings.Len(STRVAL); I++)
-            {
-                C = Strings.Mid(STRVAL.ToString(), I, 1);
-                if (FLG==1)
-                    C = Strings.LCase(C);
-                if (C == " ")
-                    FLG = 0;
                 else
-                    FLG = 1;
+                {
+                    WFrame.Left = (objFrmMdiMain.Width - WFrame.Width) / 2;
+                    WFrame.Top = (objFrmMdiMain.Height - (WFrame.Height + 50)) / 2;
+                }
             }
-            functionReturnValue = STRVAL;
-            return functionReturnValue;
+
 
         }
+
+
 
 
     }

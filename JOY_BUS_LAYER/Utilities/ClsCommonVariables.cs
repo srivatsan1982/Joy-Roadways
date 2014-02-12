@@ -22,7 +22,6 @@ namespace JOY_BUS_LAYER.Utilities
         public DataTable DTBRANDS;
         public DataTable DTGROUPS;
         public int USERID;
-        public bool SAVED;
         public string FNAME;
         public string FTAG;
         public DataSet DSRESULT;
@@ -60,6 +59,10 @@ namespace JOY_BUS_LAYER.Utilities
         public bool PRNTFLAG = true;
         public int FPRD;
         public int TPRD;
-
+        public static bool SAVED = false;
+        public static string REP = string.Empty;
+        public static int CurFrmNo = 0;
+        public static int FrmNo = 0;
+       
     }
 }

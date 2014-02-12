@@ -10,8 +10,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>JOY_CONTROL_LAYER</RootNamespace>
     <AssemblyName>JOY_CONTROL_LAYER</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -49,6 +50,7 @@
     <Compile Include="SysAdmin\ClsCompanyController.cs" />
     <Compile Include="SysAdmin\ClsCustomerController.cs" />
     <Compile Include="SysAdmin\ClsLorryController.cs" />
+    <Compile Include="SysAdmin\ClsUserController.cs" />
     <Compile Include="SysAdmin\ClsVendorController.cs" />
   </ItemGroup>
   <ItemGroup>

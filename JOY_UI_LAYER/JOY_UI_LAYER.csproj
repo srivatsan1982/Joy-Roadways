@@ -14,6 +14,21 @@
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -62,9 +77,9 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management.Instrumentation" />
-    <Reference Include="System.Windows.Forms.Ribbon, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="System.Windows.Forms.Ribbon35, Version=3.5.8.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\System.Windows.Forms.Ribbon.dll</HintPath>
+      <HintPath>bin\Debug\System.Windows.Forms.Ribbon35.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -75,11 +90,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\FrmBranchTranslander.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\FrmBranchTranslander.Designer.cs">
+      <DependentUpon>FrmBranchTranslander.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\FrmCustTranslander.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\FrmCustTranslander.Designer.cs">
+      <DependentUpon>FrmCustTranslander.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\FrmLorryTranslander.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\FrmLorryTranslander.Designer.cs">
+      <DependentUpon>FrmLorryTranslander.cs</DependentUpon>
+    </Compile>
     <Compile Include="Common\FrmMdiMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Common\FrmMdiMain.Designer.cs">
       <DependentUpon>FrmMdiMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\FrmCmpTranslander.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\FrmCmpTranslander.Designer.cs">
+      <DependentUpon>FrmCmpTranslander.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\FrmVndTranslander.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\FrmVndTranslander.Designer.cs">
+      <DependentUpon>FrmVndTranslander.cs</DependentUpon>
     </Compile>
     <Compile Include="LstItemData.cs" />
     <Compile Include="Common\FrmHlpGrd.cs">
@@ -121,17 +166,17 @@
     <Compile Include="SysAdmin\FrmLorryMaster.Designer.cs">
       <DependentUpon>FrmLorryMaster.cs</DependentUpon>
     </Compile>
+    <Compile Include="SysAdmin\FrmSBranch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SysAdmin\FrmSBranch.Designer.cs">
+      <DependentUpon>FrmSBranch.cs</DependentUpon>
+    </Compile>
     <Compile Include="SysAdmin\FrmSCompany.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SysAdmin\FrmSCompany.Designer.cs">
       <DependentUpon>FrmSCompany.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SysAdmin\FrmUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SysAdmin\FrmUser.Designer.cs">
-      <DependentUpon>FrmUser.cs</DependentUpon>
     </Compile>
     <Compile Include="SysAdmin\FrmVendorMaster.cs">
       <SubType>Form</SubType>
@@ -139,8 +184,23 @@
     <Compile Include="SysAdmin\FrmVendorMaster.Designer.cs">
       <DependentUpon>FrmVendorMaster.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Common\FrmBranchTranslander.resx">
+      <DependentUpon>FrmBranchTranslander.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\FrmCustTranslander.resx">
+      <DependentUpon>FrmCustTranslander.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\FrmLorryTranslander.resx">
+      <DependentUpon>FrmLorryTranslander.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Common\FrmMdiMain.resx">
       <DependentUpon>FrmMdiMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\FrmCmpTranslander.resx">
+      <DependentUpon>FrmCmpTranslander.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\FrmVndTranslander.resx">
+      <DependentUpon>FrmVndTranslander.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -167,10 +227,18 @@
     <EmbeddedResource Include="SysAdmin\FrmLorryMaster.resx">
       <DependentUpon>FrmLorryMaster.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SysAdmin\FrmSBranch.resx">
+      <DependentUpon>FrmSBranch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysAdmin\FrmSCompany.resx">
+      <DependentUpon>FrmSCompany.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SysAdmin\FrmVendorMaster.resx">
       <DependentUpon>FrmVendorMaster.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
+    <None Include="Properties\DataSources\JOY_BUS_LAYER.DataSets.DSCommon.datasource" />
+    <None Include="Properties\DataSources\JOY_BUS_LAYER.DataSets.DSCompany.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -229,6 +297,28 @@
     <Content Include="Resources\Users-icon %281%29.png" />
     <Content Include="Resources\Users-icon.png" />
     <Content Include="Resources\visa-1-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\JOY_BUS_LAYER\JOY_BUS_LAYER.csproj">

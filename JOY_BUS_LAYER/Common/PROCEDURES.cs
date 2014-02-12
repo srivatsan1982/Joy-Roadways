@@ -31,5 +31,9 @@ namespace JOY_BUS_LAYER.Common
         public const string PROC_ADD_EDIT_DELETE_VENDORDETAILS = "SP_ADD_EDIT_DELETE_VENDORDETAILS";
         public const string PROC_FETCH_VENDORDETAILS = "SP_FETCH_VENDORDETAILS";
         #endregion
+
+        #region [User Master]
+        public const string PROC_FETCH_USER_DETAILS = "SP_FETCH_USER_DETAILS";
+        #endregion
     }
 }

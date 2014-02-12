@@ -50,6 +50,8 @@ namespace JOY_BUS_LAYER.Common
         public const string P_CMPCURRSYM = "P_CMPCURRSYM|IN";
         public const string P_CMPCURRPAISE = "P_CMPCURRPAISE|IN";
         public const string P_CMPCURREXCHNG = "P_CMPCURREXCHNG|IN";
+        public const string P_SDT = "P_SDT|IN";
+        public const string P_FDT = "P_FDT|IN";
         
         #endregion
 
@@ -107,6 +109,14 @@ namespace JOY_BUS_LAYER.Common
         public const string P_VNDBANKBRANCH = "P_VNDBANKBRANCH|IN";
         public const string P_VNDBANKACCNO = "P_VNDBANKACCNO|IN";
         public const string P_VNDIFSCODE = "P_VNDIFSCODE|IN";
+        #endregion
+
+        #region [User Master]
+        public const string P_USERNAME = "P_USERNAME|IN";
+        public const string P_USERPWD = "P_USERPWD|IN";
+        public const string P_USERID = "P_USERID|IN";
+        public const string P_USERCODE = "P_USERCODE|IN";
+        public const string P_USERDOJ = "P_USERDOJ|IN";
         #endregion
     }
 }

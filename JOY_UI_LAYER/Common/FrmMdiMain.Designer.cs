@@ -70,20 +70,12 @@ namespace JOY_UI_LAYER.Common
             this.rbMainMenu.OrbDropDown.Size = new System.Drawing.Size(527, 447);
             this.rbMainMenu.OrbDropDown.TabIndex = 0;
             this.rbMainMenu.OrbImage = null;
-            // 
-            // 
-            // 
-            this.rbMainMenu.QuickAcessToolbar.AltKey = null;
-            this.rbMainMenu.QuickAcessToolbar.Image = null;
-            this.rbMainMenu.QuickAcessToolbar.Tag = null;
-            this.rbMainMenu.QuickAcessToolbar.Text = null;
-            this.rbMainMenu.QuickAcessToolbar.ToolTip = null;
-            this.rbMainMenu.QuickAcessToolbar.ToolTipImage = null;
-            this.rbMainMenu.QuickAcessToolbar.ToolTipTitle = null;
+            this.rbMainMenu.RibbonTabFont = new System.Drawing.Font("Trebuchet MS", 9F);
             this.rbMainMenu.Size = new System.Drawing.Size(1284, 138);
             this.rbMainMenu.TabIndex = 1;
             this.rbMainMenu.Tabs.Add(this.ribbonTab1);
-            this.rbMainMenu.TabSpacing = 6;
+            this.rbMainMenu.TabsMargin = new System.Windows.Forms.Padding(12, 26, 20, 0);
+            this.rbMainMenu.ThemeColor = System.Windows.Forms.RibbonTheme.Blue;
             // 
             // ribbonTab1
             // 
@@ -95,175 +87,95 @@ namespace JOY_UI_LAYER.Common
             this.ribbonTab1.Panels.Add(this.ribbonPanel6);
             this.ribbonTab1.Panels.Add(this.ribbonPanel7);
             this.ribbonTab1.Panels.Add(this.ribbonPanel8);
-            this.ribbonTab1.Tag = null;
             this.ribbonTab1.Text = "System Admin";
             // 
             // ribbonPanel1
             // 
             this.ribbonPanel1.Items.Add(this.rbtnCompanies);
-            this.ribbonPanel1.Tag = null;
             this.ribbonPanel1.Text = "Manage Companies";
             // 
             // rbtnCompanies
             // 
-            this.rbtnCompanies.AltKey = null;
-            this.rbtnCompanies.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
-            this.rbtnCompanies.DropDownArrowSize = new System.Drawing.Size(5, 3);
             this.rbtnCompanies.Image = ((System.Drawing.Image)(resources.GetObject("rbtnCompanies.Image")));
             this.rbtnCompanies.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnCompanies.SmallImage")));
-            this.rbtnCompanies.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
-            this.rbtnCompanies.Tag = null;
-            this.rbtnCompanies.Text = "test";
-            this.rbtnCompanies.ToolTip = null;
-            this.rbtnCompanies.ToolTipImage = null;
-            this.rbtnCompanies.ToolTipTitle = null;
+            this.rbtnCompanies.Text = "";
             this.rbtnCompanies.Click += new System.EventHandler(this.rbtnCompanies_Click);
             // 
             // ribbonPanel2
             // 
             this.ribbonPanel2.Items.Add(this.rbtnCustomers);
-            this.ribbonPanel2.Tag = null;
             this.ribbonPanel2.Text = "Manage Customers";
             // 
             // rbtnCustomers
             // 
-            this.rbtnCustomers.AltKey = null;
-            this.rbtnCustomers.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
-            this.rbtnCustomers.DropDownArrowSize = new System.Drawing.Size(5, 3);
             this.rbtnCustomers.Image = ((System.Drawing.Image)(resources.GetObject("rbtnCustomers.Image")));
             this.rbtnCustomers.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnCustomers.SmallImage")));
-            this.rbtnCustomers.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
-            this.rbtnCustomers.Tag = null;
-            this.rbtnCustomers.Text = null;
-            this.rbtnCustomers.ToolTip = null;
-            this.rbtnCustomers.ToolTipImage = null;
-            this.rbtnCustomers.ToolTipTitle = null;
             this.rbtnCustomers.Click += new System.EventHandler(this.rbtnCustomers_Click);
             // 
             // ribbonPanel3
             // 
             this.ribbonPanel3.Items.Add(this.rbtnVendors);
-            this.ribbonPanel3.Tag = null;
             this.ribbonPanel3.Text = "Manage Vendors";
             // 
             // rbtnVendors
             // 
-            this.rbtnVendors.AltKey = null;
-            this.rbtnVendors.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
-            this.rbtnVendors.DropDownArrowSize = new System.Drawing.Size(5, 3);
             this.rbtnVendors.Image = ((System.Drawing.Image)(resources.GetObject("rbtnVendors.Image")));
             this.rbtnVendors.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnVendors.SmallImage")));
-            this.rbtnVendors.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
-            this.rbtnVendors.Tag = null;
-            this.rbtnVendors.Text = null;
-            this.rbtnVendors.ToolTip = null;
-            this.rbtnVendors.ToolTipImage = null;
-            this.rbtnVendors.ToolTipTitle = null;
             this.rbtnVendors.Click += new System.EventHandler(this.rbtnVendors_Click);
             // 
             // ribbonPanel4
             // 
             this.ribbonPanel4.Items.Add(this.rbtnBanks);
-            this.ribbonPanel4.Tag = null;
             this.ribbonPanel4.Text = "Manage Banks";
             // 
             // rbtnBanks
             // 
-            this.rbtnBanks.AltKey = null;
-            this.rbtnBanks.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
-            this.rbtnBanks.DropDownArrowSize = new System.Drawing.Size(5, 3);
             this.rbtnBanks.Image = ((System.Drawing.Image)(resources.GetObject("rbtnBanks.Image")));
             this.rbtnBanks.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnBanks.SmallImage")));
-            this.rbtnBanks.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
-            this.rbtnBanks.Tag = null;
-            this.rbtnBanks.Text = null;
-            this.rbtnBanks.ToolTip = null;
-            this.rbtnBanks.ToolTipImage = null;
-            this.rbtnBanks.ToolTipTitle = null;
             this.rbtnBanks.Click += new System.EventHandler(this.rbtnBanks_Click);
             // 
             // ribbonPanel5
             // 
             this.ribbonPanel5.Items.Add(this.rbtnMenus);
-            this.ribbonPanel5.Tag = null;
             this.ribbonPanel5.Text = "Manage Menus";
             // 
             // rbtnMenus
             // 
-            this.rbtnMenus.AltKey = null;
-            this.rbtnMenus.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
-            this.rbtnMenus.DropDownArrowSize = new System.Drawing.Size(5, 3);
             this.rbtnMenus.Image = ((System.Drawing.Image)(resources.GetObject("rbtnMenus.Image")));
             this.rbtnMenus.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnMenus.SmallImage")));
-            this.rbtnMenus.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
-            this.rbtnMenus.Tag = null;
-            this.rbtnMenus.Text = null;
-            this.rbtnMenus.ToolTip = null;
-            this.rbtnMenus.ToolTipImage = null;
-            this.rbtnMenus.ToolTipTitle = null;
             this.rbtnMenus.Click += new System.EventHandler(this.rbtnMenus_Click);
             // 
             // ribbonPanel6
             // 
             this.ribbonPanel6.Items.Add(this.rbtnRoles);
-            this.ribbonPanel6.Tag = null;
             this.ribbonPanel6.Text = "Manage Roles";
             // 
             // rbtnRoles
             // 
-            this.rbtnRoles.AltKey = null;
-            this.rbtnRoles.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
-            this.rbtnRoles.DropDownArrowSize = new System.Drawing.Size(5, 3);
             this.rbtnRoles.Image = ((System.Drawing.Image)(resources.GetObject("rbtnRoles.Image")));
             this.rbtnRoles.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnRoles.SmallImage")));
-            this.rbtnRoles.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
-            this.rbtnRoles.Tag = null;
-            this.rbtnRoles.Text = null;
-            this.rbtnRoles.ToolTip = null;
-            this.rbtnRoles.ToolTipImage = null;
-            this.rbtnRoles.ToolTipTitle = null;
             this.rbtnRoles.Click += new System.EventHandler(this.rbtnRoles_Click);
             // 
             // ribbonPanel7
             // 
             this.ribbonPanel7.Items.Add(this.rbtnUsers);
-            this.ribbonPanel7.Tag = null;
             this.ribbonPanel7.Text = "Manage Users";
             // 
             // rbtnUsers
             // 
-            this.rbtnUsers.AltKey = null;
-            this.rbtnUsers.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
-            this.rbtnUsers.DropDownArrowSize = new System.Drawing.Size(5, 3);
             this.rbtnUsers.Image = ((System.Drawing.Image)(resources.GetObject("rbtnUsers.Image")));
             this.rbtnUsers.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnUsers.SmallImage")));
-            this.rbtnUsers.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
-            this.rbtnUsers.Tag = null;
-            this.rbtnUsers.Text = null;
-            this.rbtnUsers.ToolTip = null;
-            this.rbtnUsers.ToolTipImage = null;
-            this.rbtnUsers.ToolTipTitle = null;
             this.rbtnUsers.Click += new System.EventHandler(this.rbtnUsers_Click);
             // 
             // ribbonPanel8
             // 
             this.ribbonPanel8.Items.Add(this.rbtnVouchers);
-            this.ribbonPanel8.Tag = null;
             this.ribbonPanel8.Text = "Manage Vouchers";
             // 
             // rbtnVouchers
             // 
-            this.rbtnVouchers.AltKey = null;
-            this.rbtnVouchers.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
-            this.rbtnVouchers.DropDownArrowSize = new System.Drawing.Size(5, 3);
             this.rbtnVouchers.Image = ((System.Drawing.Image)(resources.GetObject("rbtnVouchers.Image")));
             this.rbtnVouchers.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbtnVouchers.SmallImage")));
-            this.rbtnVouchers.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
-            this.rbtnVouchers.Tag = null;
-            this.rbtnVouchers.Text = null;
-            this.rbtnVouchers.ToolTip = null;
-            this.rbtnVouchers.ToolTipImage = null;
-            this.rbtnVouchers.ToolTipTitle = null;
             this.rbtnVouchers.Click += new System.EventHandler(this.rbtnVouchers_Click);
             // 
             // FrmMdiMain
@@ -278,7 +190,9 @@ namespace JOY_UI_LAYER.Common
             this.IsMdiContainer = true;
             this.KeyPreview = true;
             this.Name = "FrmMdiMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Joy Roadways Logistics Application";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmMdiMain_Load);
             this.ResumeLayout(false);
 

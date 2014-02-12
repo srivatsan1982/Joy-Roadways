@@ -99,7 +99,7 @@ namespace JOY_UI_LAYER.SysAdmin
             // Wind
             // 
             this.Wind.Controls.Add(this.WindGrp);
-            this.Wind.Location = new System.Drawing.Point(71, 35);
+            this.Wind.Location = new System.Drawing.Point(2, 6);
             this.Wind.Name = "Wind";
             this.Wind.Size = new System.Drawing.Size(525, 669);
             this.Wind.TabIndex = 0;
@@ -212,7 +212,7 @@ namespace JOY_UI_LAYER.SysAdmin
             this.ChkActive.AutoSize = true;
             this.ChkActive.Location = new System.Drawing.Point(153, 592);
             this.ChkActive.Name = "ChkActive";
-            this.ChkActive.Size = new System.Drawing.Size(63, 19);
+            this.ChkActive.Size = new System.Drawing.Size(56, 17);
             this.ChkActive.TabIndex = 28;
             this.ChkActive.Text = "Active";
             this.ChkActive.UseVisualStyleBackColor = true;
@@ -737,7 +737,7 @@ namespace JOY_UI_LAYER.SysAdmin
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(1248, 724);
+            this.ClientSize = new System.Drawing.Size(532, 680);
             this.ControlBox = false;
             this.Controls.Add(this.Wind);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
@@ -746,8 +746,8 @@ namespace JOY_UI_LAYER.SysAdmin
             this.Name = "FrmCompanyMaster";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage Companies";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Activated += new System.EventHandler(this.FrmCompanyMaster_Activated);
             this.Load += new System.EventHandler(this.FrmCompanyMaster_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmCompanyMaster_KeyDown);

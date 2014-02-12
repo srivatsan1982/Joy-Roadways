@@ -7,7 +7,7 @@ using System.Data;
 using JOY_BUS_LAYER.Common;
 using JOY_BUS_LAYER.Utilities;
 using JOY_DAL_LAYER.DataAccessComponent;
-
+using System.Windows.Forms;
 
 namespace JOY_DAL_LAYER.SysAdmin
 {
@@ -15,8 +15,9 @@ namespace JOY_DAL_LAYER.SysAdmin
     {
         public ClsLorryDAL()
         {
-            DALModule.ConnName = ClsUtilities.GETPASS(ClsUtilities.FunPubGetFileContents(Environment.CurrentDirectory + @"\PROC.RDN")).Split('|');
+            DALModule.ConnName = ClsUtilities.GETPASS(ClsUtilities.FunPubGetFileContents(Application.StartupPath + @"\PROC.RDN")).Split('|');
             DALModule.Connection = DALModule.ConnName[0];
+            DALModule.Connection += "Convert Zero Datetime=True";
             DALModule.DPFactory = new DataProvider(DALModule.Connection, DataProvider.DBType.MYSQL);
             DALModule.DALlogger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
             DALModule.PARAMS = new Dictionary<string, Object>();

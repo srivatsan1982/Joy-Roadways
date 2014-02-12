@@ -27,9 +27,9 @@ namespace JOY_BUS_LAYER.SysAdmin
         public int COMPANYID { get; set; }
         public bool VNDACTIVE { get; set; }
         public int ADDERID { get; set; }
-        public DateTime ADDEDDATE { get; set; }
+        public DateTime? ADDEDDATE { get; set; }
         public int MODIFIERID { get; set; }
-        public DateTime MODIFIEDDATE { get; set; }
+        public DateTime? MODIFIEDDATE { get; set; }
         public int ALLFIELDSTAT { get; set; }
 
         public void Dispose()

@@ -7,6 +7,7 @@ using JOY_BUS_LAYER.Common;
 using JOY_BUS_LAYER.Utilities;
 using JOY_BUS_LAYER.SysAdmin;
 using JOY_DAL_LAYER.DataAccessComponent;
+using System.Windows.Forms;
 
 namespace JOY_DAL_LAYER.SysAdmin
 {
@@ -14,8 +15,9 @@ namespace JOY_DAL_LAYER.SysAdmin
     {
         public ClsCompanyDAL()
         {
-            DALModule.ConnName = ClsUtilities.GETPASS(ClsUtilities.FunPubGetFileContents(Environment.CurrentDirectory + @"\PROC.RDN")).Split('|');
+            DALModule.ConnName = ClsUtilities.GETPASS(ClsUtilities.FunPubGetFileContents(Application.StartupPath + @"\PROC.RDN")).Split('|');
             DALModule.Connection = DALModule.ConnName[0];
+            DALModule.Connection += "Convert Zero Datetime=True";
             DALModule.DPFactory = new DataProvider(DALModule.Connection, DataProvider.DBType.MYSQL);
             DALModule.DALlogger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
             DALModule.PARAMS = new Dictionary<string, Object>();
@@ -89,9 +91,10 @@ namespace JOY_DAL_LAYER.SysAdmin
                 DALModule.PARAMS.Add(PARAMETERS.P_ACTIVE, Company.COMPANYACTIVE);
                 DALModule.PARAMS.Add(PARAMETERS.P_CMPID, Company.COMPANYID);
                 DALModule.PARAMS.Add(PARAMETERS.P_CMPNAME, Company.COMPANYNAME);
-                DALModule.PARAMS.Add(PARAMETERS.P_ADT, Company.ADDEDDATE);
-                DALModule.PARAMS.Add(PARAMETERS.P_MDT, Company.MODIFIEDDATE);
+                DALModule.PARAMS.Add(PARAMETERS.P_SDT, Company.ADDEDDATE);
+                DALModule.PARAMS.Add(PARAMETERS.P_FDT, Company.MODIFIEDDATE);
                 DALModule.PARAMS.Add(PARAMETERS.P_ALLFLDSTAT, Company.ALLFIELDSTAT);
+                DALModule.PARAMS.Add(PARAMETERS.P_CMPCITY, Company.COMPANYCITY);
                 DALModule.DTRESULT = DALModule.DPFactory.GetDataTable(PROCEDURES.PROC_FETCH_COMPANYDETAILS, DALModule.PARAMS);
             }
             catch (Exception ex)
